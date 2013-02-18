@@ -94,12 +94,25 @@ textarea {
    ========================================================================== */
 
 body {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.6) url("../img/debut_dark.png") center repeat;
+}
+
+.content {
+    width: 92%;
+    margin: 0 auto 3.125em;
+}
+
+h1 {
+    color: #fff;
+    font-family: overlock, serif;
+    font-size: 3em;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
 .main_image {
     max-width: 100%;
-    margin: 3.125em auto 0;
+    margin: auto;
     display: block;
     box-shadow: 3px 3px 7px 2px rgba(0,0,0,0.4);
 }
@@ -110,9 +123,23 @@ body {
 
 
 
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
 
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+  
+    body {
+        background: rgba(0,0,0,0.6) url("../img/debut_dark_@2x.png") center repeat;
+    }
 
-
+}
 
 
 
