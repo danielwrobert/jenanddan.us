@@ -63,7 +63,6 @@ textarea {
 /*
  *  Global Elements
  **/
-
 html {
   font-size: 62.5%; /* Sets up the Base 10 stuff for rem font sizing */
 }
@@ -77,6 +76,31 @@ img { max-width: 100%; }
 .content {
   @include rem-calc(max-width, 102.4);
   margin: auto;
-  background: red;
 }
+
+
+
+/*
+ *  Header Section
+ **/
+header {
+  @include rem-calc(height, 72.5);
+  background: transparent image-url("fields.jpg") center top no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #FFF;
+  
+  h1 {
+    @include rem-calc(font-size, 4.8);
+    margin: 0;
+    text-align: center;
+  }
+
+  .content {
+    @include rem-calc(padding, 30, 0, 0);
+    height: 100%;
+  }
+}
+
+
 
