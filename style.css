@@ -629,12 +629,14 @@ header h1 {
   font-size: 48px;
   font-size: 4.8rem;
   margin: 0;
+  color: #fff;
   text-align: center;
 }
 header .content {
   padding: 300px 0px 0px;
   padding: 30rem 0rem 0rem;
   height: 100%;
+  color: #fff;
 }
 
 /*

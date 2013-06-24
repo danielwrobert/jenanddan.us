@@ -98,12 +98,14 @@ header {
   h1 {
     @include rem-calc(font-size, 4.8);
     margin: 0;
+    color: #fff;
     text-align: center;
   }
 
   .content {
     @include rem-calc(padding, 30, 0, 0);
     height: 100%;
+    color: #fff;
   }
 }
 
