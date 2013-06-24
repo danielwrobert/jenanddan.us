@@ -69,9 +69,14 @@ html {
 
 body {
   @include rem-calc(font-size, 1.6);
+  background: lighten($cream, 5%);
+  color: $grey;
 }
 
 img { max-width: 100%; }
+
+h1, h2, h3,
+h4, h5, h6 { color: #000; }
 
 .content {
   @include rem-calc(max-width, 102.4);
@@ -103,4 +108,18 @@ header {
 }
 
 
-
+/*
+ *  Footer Section
+ **/
+footer {
+  @include rem-calc(margin-top, 2.5);
+  @include rem-calc(padding-top, 9.5);
+  background: transparent image-url("bg_skyline.png") center top no-repeat;
+  text-align: center;
+  
+  p {
+    @include rem-calc(padding, 4.8, 0);
+    margin: 0;
+    background: $brown;
+  }
+}

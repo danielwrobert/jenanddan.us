@@ -595,10 +595,17 @@ html {
 body {
   font-size: 16px;
   font-size: 1.6rem;
+  background: #fbf7f2;
+  color: #666666;
 }
 
 img {
   max-width: 100%;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  color: #000;
 }
 
 .content {
@@ -628,6 +635,24 @@ header .content {
   padding: 300px 0px 0px;
   padding: 30rem 0rem 0rem;
   height: 100%;
+}
+
+/*
+ *  Footer Section
+ **/
+footer {
+  margin-top: 25px;
+  margin-top: 2.5rem;
+  padding-top: 95px;
+  padding-top: 9.5rem;
+  background: transparent url('img/bg_skyline.png?1372042500') center top no-repeat;
+  text-align: center;
+}
+footer p {
+  padding: 48px 0px;
+  padding: 4.8rem 0rem;
+  margin: 0;
+  background: #a79b85;
 }
 
 /* ==========================================================================
