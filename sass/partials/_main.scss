@@ -69,7 +69,7 @@ html {
 
 body {
   @include rem-calc(font-size, 1.6);
-  background: lighten($cream, 5%);
+  background: lighten($cream, 14%);
   color: $grey;
 }
 
