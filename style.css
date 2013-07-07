@@ -525,6 +525,39 @@ Avenir:
 Adobe Garamond:
 	font-family: "adobe-garamond-pro", Georgia, serif;
 */
+.column2, .column3 {
+  *zoom: 1;
+}
+.column2:before, .column3:before, .column2:after, .column3:after {
+  content: "";
+  display: table;
+}
+.column2:after, .column3:after {
+  clear: both;
+}
+.column2 .column, .column3 .column {
+  padding: 15px 0px;
+  padding: 1.5rem 0rem;
+}
+@media (min-width: 600px) {
+  .column2 .column, .column3 .column {
+    width: 46%;
+    margin-right: 8%;
+    padding: 0;
+    float: left;
+  }
+  .column2 .column:last-of-type, .column3 .column:last-of-type {
+    margin: 0;
+  }
+}
+
+@media (min-width: 600px) {
+  .column3 .column {
+    width: 29.33333%;
+    margin-right: 6%;
+  }
+}
+
 /* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
    ========================================================================== */
@@ -595,7 +628,7 @@ html {
 body {
   font-size: 16px;
   font-size: 1.6rem;
-  background: #fffdfa;
+  background: #f9fbfa;
   color: #666666;
 }
 
@@ -640,6 +673,33 @@ header .content {
 }
 
 /*
+ *  Content Section
+ **/
+.content {
+  padding: 15px 0px;
+  padding: 1.5rem 0rem;
+  width: 92%;
+  margin: auto;
+}
+@media (min-width: 1080px) {
+  .content {
+    width: 100%;
+  }
+}
+
+.placeholder {
+  height: 725px;
+  height: 72.5rem;
+  background: transparent url('img/house.jpg?1373153306') center top no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #FFF;
+}
+.placeholder.banner_two {
+  background-image: url('img/rsvp.jpg?1373153300');
+}
+
+/*
  *  Footer Section
  **/
 footer {
@@ -647,14 +707,14 @@ footer {
   margin-top: 2.5rem;
   padding-top: 95px;
   padding-top: 9.5rem;
-  background: transparent url('img/bg_skyline.png?1372042500') center top no-repeat;
+  background: transparent url('img/bg_skyline.png?1373181564') center top no-repeat;
   text-align: center;
 }
 footer p {
   padding: 48px 0px;
   padding: 4.8rem 0rem;
   margin: 0;
-  background: #a79b85;
+  background: #d8e5e1;
 }
 
 /* ==========================================================================
