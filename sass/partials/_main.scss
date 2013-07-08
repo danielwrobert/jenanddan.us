@@ -116,13 +116,15 @@ header {
  *  Content Section
  **/
 .content {
-  @include rem-calc(padding, 1.5, 0);
+  @include rem-calc(padding, 2, 0);
   width: 92%;
   margin: auto;
   
   @include breakpoint(1080px) {
     width: 100%;
   }
+
+  h2 { margin-bottom: 0; }
 }
 .placeholder {
   @include rem-calc(height, 72.5);
@@ -144,10 +146,15 @@ header {
  **/
 footer {
   @include rem-calc(margin-top, 2.5);
-  @include rem-calc(padding-top, 9.5);
-  background: transparent image-url("bg_skyline.png") center top no-repeat;
+  @include rem-calc(padding-top, 4.5);
+  background: transparent image-url("bg_skyline_small.png") center top no-repeat;
   text-align: center;
   
+  @include breakpoint(small) {
+    @include rem-calc(padding-top, 9.5);
+    background-image: image-url("bg_skyline.png");
+  }
+
   p {
     @include rem-calc(padding, 4.8, 0);
     margin: 0;

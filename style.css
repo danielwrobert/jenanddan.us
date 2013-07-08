@@ -676,8 +676,8 @@ header .content {
  *  Content Section
  **/
 .content {
-  padding: 15px 0px;
-  padding: 1.5rem 0rem;
+  padding: 20px 0px;
+  padding: 2rem 0rem;
   width: 92%;
   margin: auto;
 }
@@ -685,6 +685,9 @@ header .content {
   .content {
     width: 100%;
   }
+}
+.content h2 {
+  margin-bottom: 0;
 }
 
 .placeholder {
@@ -705,10 +708,17 @@ header .content {
 footer {
   margin-top: 25px;
   margin-top: 2.5rem;
-  padding-top: 95px;
-  padding-top: 9.5rem;
-  background: transparent url('img/bg_skyline.png?1373181564') center top no-repeat;
+  padding-top: 45px;
+  padding-top: 4.5rem;
+  background: transparent url('img/bg_skyline_small.png?1373181600') center top no-repeat;
   text-align: center;
+}
+@media (min-width: 600px) {
+  footer {
+    padding-top: 95px;
+    padding-top: 9.5rem;
+    background-image: url('img/bg_skyline.png?1373181564');
+  }
 }
 footer p {
   padding: 48px 0px;
