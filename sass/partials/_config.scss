@@ -15,20 +15,32 @@
 /* =VARIABLES
 -------------------------------------------------------------- */
 /*===== Colors =====*/
-$brown: #a79b85;
+// $brown: #a79b85;
 // $pink: #e8ceb3;
 // $cream: #f4ecdf;
 // $green_light: #b9cebd;
 // $green: #97b1a6;
-$grey: #666666;
+// $grey: #666666;
 
 // Color Pallate Reference - http://pinterest.com/pin/20477373278606093/
-$blue: #a8bbb9;
-$blue_light: #d4e3de;
-$green: #a3b995;
-$cream: #f9ddb8;
-$orange: #eb7f65;
-$orange_light: #fbbd96;
+// $blue: #a8bbb9;
+// $blue_light: #d4e3de;
+// $green: #a3b995;
+// $cream: #f9ddb8;
+// $orange: #eb7f65;
+// $orange_light: #fbbd96;
+
+
+// Color Pallate Option #3
+$purple: #6a5f70;
+$coral: #ffa89c;
+$grey: #666666;
+$grey_light: #d8cec5;
+
+
+/*===== Fonts =====*/
+$header_font: 'Berkshire Swash', cursive;
+
 
 
 
@@ -45,7 +57,7 @@ $bezier: cubic-bezier(0.6, 0, 0.4, 1);
 /* =MIXINS
 -------------------------------------------------------------- */
 
-@mixin text_wrap {
+@mixin text_wrap() {
 	white-space: pre;           /* CSS 2.0 */
 	white-space: pre-wrap;      /* CSS 2.1 */
 	white-space: pre-line;      /* CSS 3.0 */
@@ -57,6 +69,20 @@ $bezier: cubic-bezier(0.6, 0, 0.4, 1);
 }
 
 
+// TODO: Test this ... may need some adjustments.
+@mixin font-stack($font) {
+	@font-face {
+    font-family: '$font';
+    src: url('$font.eot');
+    src: url('$font.eot?#iefix') format('embedded-opentype'),
+         url('$font.woff') format('woff'),
+         url('$font.ttf') format('truetype'),
+         url('$font.svg#$font') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+	}
+}
 
 
 @function strip-unit($num) {

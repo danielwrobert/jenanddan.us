@@ -69,7 +69,7 @@ html {
 
 body {
   @include rem-calc(font-size, 1.6);
-  background: lighten($blue_light, 12%);
+  // background: #fff;
   color: $grey;
 }
 
@@ -95,16 +95,38 @@ header {
   // background-size: 100% auto;
   background-attachment: fixed;
   color: #FFF;
-  
+
+  .content {
+  	text-align: center;
+  }
+
+  .main_header {
+	@include rem-calc(padding, 15, 5);
+	@include inline-block();
+ 	background: rgba(0,0,0,0.4);
+	border-radius: 225px;
+  }
+ 
   h1 {
-    @include rem-calc(font-size, 4.8);
+    @include rem-calc(font-size, 7.2);
     margin: 0;
     color: #fff;
+	font-family: $header_font;
+	font-weight: 400;
     text-align: center;
+  }
+  .subtitle {
+	  @include rem-calc(font-size, 2.2);
+	  margin: 0;
+      display: block;
+	  color: #fff;
+	  font-family: sans-serif;
+	  font-weight: normal;
+	  text-align: center;
   }
 
   .content {
-    @include rem-calc(padding, 30, 0, 0);
+    @include rem-calc(padding, 15, 0, 0);
     height: 100%;
     color: #fff;
   }
@@ -156,9 +178,11 @@ footer {
   }
 
   p {
-    @include rem-calc(padding, 4.8, 0);
+    @include rem-calc(padding, 1.5, 0);
     margin: 0;
-    // background: $brown;
-    background: tint($blue_light, 10%);
+    background: $purple;
+	color: #fff;
+    // background: shade($blue_light, 5%);
+    // background: tint($purple, 10%);
   }
 }

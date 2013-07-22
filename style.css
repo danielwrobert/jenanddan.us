@@ -8,6 +8,7 @@
 /* =VARIABLES
 -------------------------------------------------------------- */
 /*===== Colors =====*/
+/*===== Fonts =====*/
 /*===== Dimensions =====*/
 /*===== Grid =====*/
 /* =MIXINS
@@ -628,7 +629,6 @@ html {
 body {
   font-size: 16px;
   font-size: 1.6rem;
-  background: #f9fbfa;
   color: #666666;
 }
 
@@ -658,16 +658,43 @@ header {
   background-attachment: fixed;
   color: #FFF;
 }
+header .content {
+  text-align: center;
+}
+header .main_header {
+  padding: 150px 50px;
+  padding: 15rem 5rem;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 225px;
+}
 header h1 {
-  font-size: 48px;
-  font-size: 4.8rem;
+  font-size: 72px;
+  font-size: 7.2rem;
   margin: 0;
   color: #fff;
+  font-family: "Berkshire Swash", cursive;
+  font-weight: 400;
+  text-align: center;
+}
+header .subtitle {
+  font-size: 22px;
+  font-size: 2.2rem;
+  margin: 0;
+  display: block;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: normal;
   text-align: center;
 }
 header .content {
-  padding: 300px 0px 0px;
-  padding: 30rem 0rem 0rem;
+  padding: 150px 0px 0px;
+  padding: 15rem 0rem 0rem;
   height: 100%;
   color: #fff;
 }
@@ -710,21 +737,22 @@ footer {
   margin-top: 2.5rem;
   padding-top: 45px;
   padding-top: 4.5rem;
-  background: transparent url('img/bg_skyline_small.png?1373181600') center top no-repeat;
+  background: transparent url('img/bg_skyline_small.png?1374465994') center top no-repeat;
   text-align: center;
 }
 @media (min-width: 600px) {
   footer {
     padding-top: 95px;
     padding-top: 9.5rem;
-    background-image: url('img/bg_skyline.png?1373181564');
+    background-image: url('img/bg_skyline.png?1374466033');
   }
 }
 footer p {
-  padding: 48px 0px;
-  padding: 4.8rem 0rem;
+  padding: 15px 0px;
+  padding: 1.5rem 0rem;
   margin: 0;
-  background: #d8e5e1;
+  background: #6a5f70;
+  color: #fff;
 }
 
 /* ==========================================================================
