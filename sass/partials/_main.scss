@@ -7,52 +7,52 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+  color: #222;
 }
 
 body {
-    font-size: 1em;
-    line-height: 1.4;
+  font-size: 1em;
+  line-height: 1.4;
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 img {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 .chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 
@@ -111,14 +111,14 @@ header {
     @include rem-calc(font-size, 7.2);
     margin: 0;
     color: #fff;
-	font-family: $header_font;
-	font-weight: 400;
+		font-family: $header_font;
+		font-weight: 400;
     text-align: center;
   }
   .subtitle {
 	  @include rem-calc(font-size, 2.2);
 	  margin: 0;
-      display: block;
+    display: block;
 	  color: #fff;
 	  font-family: sans-serif;
 	  font-weight: normal;
@@ -181,7 +181,7 @@ footer {
     @include rem-calc(padding, 1.5, 0);
     margin: 0;
     background: $purple;
-	color: #fff;
+    color: #fff;
     // background: shade($blue_light, 5%);
     // background: tint($purple, 10%);
   }
