@@ -9,7 +9,7 @@
 *.vi
 *~
 *.sass-cache
-.sass-cache
+.sass-cache/
 /_resources
 error_log
 
