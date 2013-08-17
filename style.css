@@ -693,8 +693,8 @@ header .content {
   text-align: center;
 }
 header .main_header {
-  padding: 70px 25px;
-  padding: 7rem 2.5rem;
+  padding: 45px 25px;
+  padding: 4.5rem 2.5rem;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -707,10 +707,12 @@ header .main_header {
 header h1 {
   font-size: 95px;
   font-size: 9.5rem;
+  letter-spacing: 10px;
+  letter-spacing: 1rem;
   margin: 0;
   color: #fff;
-  font-family: "kg_eyes_wide_openregular", serif;
-  letter-spacing: 10px;
+  font-family: "Engagement", cursive;
+  font-weight: normal;
   text-align: center;
 }
 header h1 span {

@@ -127,7 +127,7 @@ header {
   }
 
   .main_header {
-  	@include rem-calc(padding, 7, 2.5);
+  	@include rem-calc(padding, 4.5, 2.5);
   	@include inline-block();
    	background: rgba(0,0,0,0.4);
     // background: $blue;
@@ -136,12 +136,12 @@ header {
  
   h1 {
     @include rem-calc(font-size, 9.5);
+    @include rem-calc(letter-spacing, 1);
     margin: 0;
     color: #fff;
     // color: $peach;
 		font-family: $script_font;
-		// font-weight: 400;
-    letter-spacing: 10px;
+		font-weight: normal;
     text-align: center;
     
     span {
