@@ -84,12 +84,38 @@ h4, h5, h6 { color: #000; }
 }
 
 
+/*
+ *  Nav Section
+ **/
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  background: $blue;
+
+  ul {
+    @include rem-calc(padding, 1.5, 2);
+    margin: 0;
+    
+    li {
+      @include rem-calc(margin-right, 1.5);
+      float: left;
+      
+      a {
+        color: $peach;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
 
 /*
  *  Header Section
  **/
 header {
-  @include rem-calc(height, 72.5);
+  @include rem-calc(height, 65);
   background: transparent image-url("fields.jpg") center top no-repeat;
   background-size: cover;
   // background-size: 100% auto;
@@ -101,19 +127,26 @@ header {
   }
 
   .main_header {
-	@include rem-calc(padding, 15, 5);
-	@include inline-block();
- 	background: rgba(0,0,0,0.4);
-	border-radius: 225px;
+  	@include rem-calc(padding, 7, 2.5);
+  	@include inline-block();
+   	background: rgba(0,0,0,0.4);
+    // background: $blue;
+  	border-radius: 225px;
   }
  
   h1 {
-    @include rem-calc(font-size, 7.2);
+    @include rem-calc(font-size, 9.5);
     margin: 0;
     color: #fff;
-		font-family: $header_font;
-		font-weight: 400;
+    // color: $peach;
+		font-family: $script_font;
+		// font-weight: 400;
+    letter-spacing: 10px;
     text-align: center;
+    
+    span {
+      @include rem-calc(font-size, 7.5);
+    }
   }
   .subtitle {
 	  @include rem-calc(font-size, 2.2);
@@ -126,7 +159,7 @@ header {
   }
 
   .content {
-    @include rem-calc(padding, 15, 0, 0);
+    @include rem-calc(padding, 18, 0, 0);
     height: 100%;
     color: #fff;
   }
@@ -146,7 +179,11 @@ header {
     width: 100%;
   }
 
-  h2 { margin-bottom: 0; }
+  h2 {
+    @include rem-calc(font-size, 3.5);
+    margin-bottom: 0;
+    font-family: $header_font;
+  }
 }
 .placeholder {
   @include rem-calc(height, 72.5);
@@ -180,7 +217,7 @@ footer {
   p {
     @include rem-calc(padding, 1.5, 0);
     margin: 0;
-    background: $purple;
+    background: $blue;
     color: #fff;
     // background: shade($blue_light, 5%);
     // background: tint($purple, 10%);

@@ -515,17 +515,22 @@ table {
 /* ==========================================================================
    Font Styles
    ========================================================================== */
-/*
-Avenir:
-	font-family: "Avenir Next W01 Light", sans-serif;
-	font-family: "Avenir Next W01 Thin", sans-serif;
-	font-family: "Avenir LT W02 85 Heavy", sans-serif;
-	font-family: "Avenir LT W02 65 Medium", sans-serif;
-	font-family: "AvenirNextW04-CondDemiI", sans-serif;
+@font-face {
+  font-family: 'kg_eyes_wide_openregular';
+  src: url("fonts/kgeyeswideopen-webfont.eot");
+  src: url("fonts/kgeyeswideopen-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/kgeyeswideopen-webfont.woff") format("woff"), url("fonts/kgeyeswideopen-webfont.ttf") format("truetype"), url("fonts/kgeyeswideopen-webfont.svg#kg_eyes_wide_openregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 
-Adobe Garamond:
-	font-family: "adobe-garamond-pro", Georgia, serif;
-*/
+@font-face {
+  font-family: 'brain_flowerregular';
+  src: url("brain_flower_euro-webfont.eot");
+  src: url("fonts/brain_flower_euro-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/brain_flower_euro-webfont.woff") format("woff"), url("fonts/brain_flower_euro-webfont.ttf") format("truetype"), url("fonts/brain_flower_euro-webfont.svg#brain_flowerregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .column2, .column3 {
   *zoom: 1;
 }
@@ -648,11 +653,37 @@ h4, h5, h6 {
 }
 
 /*
+ *  Nav Section
+ **/
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #75869c;
+}
+nav ul {
+  padding: 15px 20px;
+  padding: 1.5rem 2rem;
+  margin: 0;
+}
+nav ul li {
+  margin-right: 15px;
+  margin-right: 1.5rem;
+  float: left;
+}
+nav ul li a {
+  color: #fee0c4;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/*
  *  Header Section
  **/
 header {
-  height: 725px;
-  height: 72.5rem;
+  height: 650px;
+  height: 65rem;
   background: transparent url('img/fields.jpg?1371623766') center top no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -662,8 +693,8 @@ header .content {
   text-align: center;
 }
 header .main_header {
-  padding: 150px 50px;
-  padding: 15rem 5rem;
+  padding: 70px 25px;
+  padding: 7rem 2.5rem;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -674,13 +705,17 @@ header .main_header {
   border-radius: 225px;
 }
 header h1 {
-  font-size: 72px;
-  font-size: 7.2rem;
+  font-size: 95px;
+  font-size: 9.5rem;
   margin: 0;
   color: #fff;
-  font-family: "Berkshire Swash", cursive;
-  font-weight: 400;
+  font-family: "kg_eyes_wide_openregular", serif;
+  letter-spacing: 10px;
   text-align: center;
+}
+header h1 span {
+  font-size: 75px;
+  font-size: 7.5rem;
 }
 header .subtitle {
   font-size: 22px;
@@ -693,8 +728,8 @@ header .subtitle {
   text-align: center;
 }
 header .content {
-  padding: 150px 0px 0px;
-  padding: 15rem 0rem 0rem;
+  padding: 180px 0px 0px;
+  padding: 18rem 0rem 0rem;
   height: 100%;
   color: #fff;
 }
@@ -714,7 +749,10 @@ header .content {
   }
 }
 .content h2 {
+  font-size: 35px;
+  font-size: 3.5rem;
   margin-bottom: 0;
+  font-family: "Rokkitt", serif;
 }
 
 .placeholder {
@@ -751,7 +789,7 @@ footer p {
   padding: 15px 0px;
   padding: 1.5rem 0rem;
   margin: 0;
-  background: #6a5f70;
+  background: #75869c;
   color: #fff;
 }
 

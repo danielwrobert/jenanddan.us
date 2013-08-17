@@ -69,8 +69,8 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       compass: {
-        files: 'sass/partials/*.scss',
-        tasks: ['compass']
+        files: '**/*.scss',
+        tasks: ['compass:dist']
       },
       uglify: {
         files: ['js/main.js', 'js/plugins.js'],
@@ -85,6 +85,7 @@ module.exports = function(grunt) {
         options: {
           sassDir: 'sass/',
           cssDir: '.',
+          imagesDir: 'img/',
           config: 'src/config.rb'
         }
       }
@@ -115,6 +116,7 @@ module.exports = function(grunt) {
     'jshint',
     'compass',
     // 'imagemin',
-    'uglify'
+    'uglify',
+    'watch'
   ]);
 };
