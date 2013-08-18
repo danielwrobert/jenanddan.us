@@ -102,7 +102,10 @@ nav {
       float: left;
       
       a {
+        @include rem-calc(font-size, 1.8);
+        @include rem-calc(letter-spacing, 0.1);
         color: $peach;
+        font-family: $header_font;
         text-decoration: none;
         text-transform: uppercase;
       }
@@ -116,9 +119,9 @@ nav {
  **/
 header {
   @include rem-calc(height, 65);
-  background: transparent image-url("fields.jpg") center top no-repeat;
-  background-size: cover;
-  // background-size: 100% auto;
+  background: $grey image-url("encinitas.jpg") center top no-repeat;
+  // background-size: cover;
+  background-size: 100% auto;
   background-attachment: fixed;
   color: #FFF;
 

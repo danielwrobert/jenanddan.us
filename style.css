@@ -673,7 +673,12 @@ nav ul li {
   float: left;
 }
 nav ul li a {
+  font-size: 18px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
   color: #fee0c4;
+  font-family: "Rokkitt", serif;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -684,8 +689,8 @@ nav ul li a {
 header {
   height: 650px;
   height: 65rem;
-  background: transparent url('img/fields.jpg?1371623766') center top no-repeat;
-  background-size: cover;
+  background: #666666 url('img/encinitas.jpg?1376856399') center top no-repeat;
+  background-size: 100% auto;
   background-attachment: fixed;
   color: #FFF;
 }
