@@ -196,22 +196,23 @@ header {
 .content_block {
   padding: 54px 5%;
 
-  &:nth-of-type(4n+1) {
+  &:nth-of-type(4n+1),
+  &:nth-of-type(4n+3) {
     background: $blue;
 
+    h2 { color: $peach; }
     p { color: #fff; }
-  }
-  &:nth-of-type(4n+2) {
-    background: #fff;
   }
   &:nth-of-type(4n+3) {
     background: $purple;
-
-    p { color: #fff; }
   }
+  &:nth-of-type(4n+2),
   &:nth-of-type(4n+4) {
-    background: $peach;
+    background: #fff;
   }
+  // &:nth-of-type(4n+4) {
+  //   background: $peach;
+  // }
 }
 
 .content {
