@@ -173,8 +173,12 @@ header {
 /*
  *  Content Section
  **/
+.content_block {
+  padding: 54px 5%;
+}
+
 .content {
-  @include rem-calc(padding, 2, 0);
+  // @include rem-calc(padding, 2, 0);
   width: 92%;
   margin: auto;
   
@@ -184,7 +188,7 @@ header {
 
   h2 {
     @include rem-calc(font-size, 3.5);
-    margin-bottom: 0;
+    margin: 0;
     font-family: $header_font;
   }
 }

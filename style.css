@@ -744,9 +744,11 @@ header .content {
 /*
  *  Content Section
  **/
+.content_block {
+  padding: 54px 5%;
+}
+
 .content {
-  padding: 20px 0px;
-  padding: 2rem 0rem;
   width: 92%;
   margin: auto;
 }
@@ -758,7 +760,7 @@ header .content {
 .content h2 {
   font-size: 35px;
   font-size: 3.5rem;
-  margin-bottom: 0;
+  margin: 0;
   font-family: "Rokkitt", serif;
 }
 
@@ -782,14 +784,14 @@ footer {
   margin-top: 2.5rem;
   padding-top: 45px;
   padding-top: 4.5rem;
-  background: transparent url('img/bg_skyline_small.png?1374465994') center top no-repeat;
+  background: transparent url('img/bg_skyline_small.png?1376877788') center top no-repeat;
   text-align: center;
 }
 @media (min-width: 600px) {
   footer {
     padding-top: 95px;
     padding-top: 9.5rem;
-    background-image: url('img/bg_skyline.png?1374466033');
+    background-image: url('img/bg_skyline.png?1376877765');
   }
 }
 footer p {
