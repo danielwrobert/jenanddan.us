@@ -87,7 +87,7 @@ h4, h5, h6 { color: #000; }
 /*
  *  Nav Section
  **/
-nav {
+nav[role="navigation"] {
   width: 100%;
   position: fixed;
   top: 0; left: 0;
@@ -96,10 +96,12 @@ nav {
   ul {
     @include rem-calc(padding, 1.5, 2);
     margin: 0;
+    position: relative;
     
     li {
       @include rem-calc(margin-right, 1.5);
-      float: left;
+      @include inline-block();
+      // float: left;
       
       a {
         @include rem-calc(font-size, 1.8);
@@ -108,6 +110,24 @@ nav {
         font-family: $header_font;
         text-decoration: none;
         text-transform: uppercase;
+      }
+
+      &:last-of-type {
+        @include rem-calc(right, 0.6);
+        @include rem-calc(top, 1);
+        @include rem-calc(padding, 0.5, 1.5);
+        position: absolute;
+        background: $peach;
+        border-radius: 5px;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+        cursor: pointer;
+
+        a {
+          @include inline-block();
+          width: 100%; height: 100%;
+          color: #FFF;
+        }
+        &:hover { background: darken($peach, 5%); }
       }
     }
   }
@@ -118,8 +138,8 @@ nav {
  *  Header Section
  **/
 header {
-  @include rem-calc(height, 65);
-  background: $grey image-url("encinitas.jpg") center top no-repeat;
+  @include rem-calc(height, 55);
+  background: $grey image-url("fields.jpg") center top no-repeat;
   // background-size: cover;
   background-size: 100% auto;
   background-attachment: fixed;
@@ -175,6 +195,23 @@ header {
  **/
 .content_block {
   padding: 54px 5%;
+
+  &:nth-of-type(4n+1) {
+    background: $blue;
+
+    p { color: #fff; }
+  }
+  &:nth-of-type(4n+2) {
+    background: #fff;
+  }
+  &:nth-of-type(4n+3) {
+    background: $purple;
+
+    p { color: #fff; }
+  }
+  &:nth-of-type(4n+4) {
+    background: $peach;
+  }
 }
 
 .content {
