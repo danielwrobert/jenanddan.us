@@ -145,19 +145,16 @@ header {
   background-attachment: fixed;
   color: #FFF;
 
-  .content {
-  	text-align: center;
-  }
-
   .main_header {
   	@include rem-calc(padding, 4.5, 2.5);
+    @include rem-calc(margin, 0,0,2.5);
   	@include inline-block();
-   	background: rgba(0,0,0,0.4);
+   	background: rgba(117,134,156,0.7);
     // background: $blue;
   	border-radius: 225px;
   }
  
-  h1 {
+  .logo {
     @include rem-calc(font-size, 9.5);
     @include rem-calc(letter-spacing, 1);
     margin: 0;
@@ -182,9 +179,10 @@ header {
   }
 
   .content {
-    @include rem-calc(padding, 18, 0, 0);
+    @include rem-calc(padding, 11, 0, 0);
     height: 100%;
     color: #fff;
+    text-align: center;
   }
 }
 
@@ -196,18 +194,17 @@ header {
 .content_block {
   padding: 54px 5%;
 
-  &:nth-of-type(4n+1),
-  &:nth-of-type(4n+3) {
+  &:nth-of-type(4n+2),
+  &:nth-of-type(4n+4) {
     background: $blue;
 
     h2 { color: $peach; }
     p { color: #fff; }
   }
-  &:nth-of-type(4n+3) {
+  &:nth-of-type(4n+4) {
     background: $purple;
   }
-  &:nth-of-type(4n+2),
-  &:nth-of-type(4n+4) {
+  &:nth-of-type(2n+1) {
     background: #fff;
   }
   // &:nth-of-type(4n+4) {
@@ -231,15 +228,15 @@ header {
   }
 }
 .placeholder {
-  @include rem-calc(height, 72.5);
-  background: transparent image-url("house.jpg") center top no-repeat;
+  @include rem-calc(height, 50);
+  background: transparent image-url("encinitas.jpg") center top no-repeat;
   background-size: cover;
   // background-size: 100% auto;
   background-attachment: fixed;
   color: #FFF;
   
   &.banner_two {
-    background-image: image-url("rsvp.jpg");
+    background-image: image-url("palms.jpg");
   }
 }
 
