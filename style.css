@@ -643,7 +643,7 @@ img {
 
 h1, h2, h3,
 h4, h5, h6 {
-  color: #000;
+  font-family: "Rokkitt", serif;
 }
 
 .content {
@@ -728,8 +728,6 @@ header {
   color: #FFF;
 }
 header h1, header h2 {
-  font-family: "Rokkitt", serif;
-  color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 header .main_header {
@@ -784,21 +782,14 @@ header .content {
  **/
 .content_block {
   padding: 54px 5%;
+  color: #000;
 }
-.content_block:nth-of-type(4n+2), .content_block:nth-of-type(4n+4) {
+.content_block#registry {
   background: #75869c;
+  color: #FFF;
 }
-.content_block:nth-of-type(4n+2) h2, .content_block:nth-of-type(4n+4) h2 {
+.content_block#registry h2 {
   color: #fee0c4;
-}
-.content_block:nth-of-type(4n+2) p, .content_block:nth-of-type(4n+4) p {
-  color: #fff;
-}
-.content_block:nth-of-type(4n+4) {
-  background: #6a5f70;
-}
-.content_block:nth-of-type(2n+1) {
-  background: #fff;
 }
 
 .content {
@@ -814,10 +805,9 @@ header .content {
   font-size: 35px;
   font-size: 3.5rem;
   margin: 0;
-  font-family: "Rokkitt", serif;
 }
 
-.placeholder {
+.image_block {
   height: 500px;
   height: 50rem;
   background: transparent url('img/encinitas.jpg?1376856399') center top no-repeat;
@@ -825,7 +815,15 @@ header .content {
   background-attachment: fixed;
   color: #FFF;
 }
-.placeholder.banner_two {
+.image_block h2 {
+  padding-top: 50px;
+  padding-top: 5rem;
+  font-size: 50px;
+  font-size: 5rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.image_block.banner_two {
   background-image: url('img/palms.jpg?1376858178');
 }
 
