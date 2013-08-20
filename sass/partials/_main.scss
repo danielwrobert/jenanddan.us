@@ -249,6 +249,18 @@ header {
 
 
 /*
+ *  Map Section
+ **/
+ .map {
+   iframe {
+      @include rem-calc(min-height, 40);
+     width: 100%;
+   }
+ }
+
+
+
+/*
  *  Footer Section
  **/
 footer {
