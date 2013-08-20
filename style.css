@@ -698,7 +698,7 @@ nav[role="navigation"] ul li:last-of-type {
   position: absolute;
   background: #fee0c4;
   border-radius: 5px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 nav[role="navigation"] ul li:last-of-type a {
@@ -726,6 +726,11 @@ header {
   background-size: 100% auto;
   background-attachment: fixed;
   color: #FFF;
+}
+header h1, header h2 {
+  font-family: "Rokkitt", serif;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 header .main_header {
   padding: 45px 25px;
@@ -847,7 +852,7 @@ footer p {
   padding: 1.5rem 0rem;
   margin: 0;
   background: #75869c;
-  color: #fff;
+  color: #fee0c4;
 }
 
 /* ==========================================================================
