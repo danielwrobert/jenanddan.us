@@ -151,6 +151,8 @@ header {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
   }
 
+  h1 { @include rem-calc(font-size, 5); }
+
   .main_header {
   	@include rem-calc(padding, 4.5, 2.5);
     @include rem-calc(margin, 0,0,2.5);
@@ -185,7 +187,7 @@ header {
   }
 
   .content {
-    @include rem-calc(padding, 11, 0, 0);
+    @include rem-calc(padding, 7, 0, 0);
     height: 100%;
     color: #fff;
     text-align: center;
@@ -222,6 +224,8 @@ header {
     @include rem-calc(font-size, 3.5);
     margin: 0;
   }
+
+  p { @include rem-calc(font-size, 1.9); }
 }
 .image_block {
   @include rem-calc(height, 50);
