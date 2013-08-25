@@ -2,6 +2,7 @@
 .sass-cache/
 .git/
 _resources/
+_resources/*
 sass/
 src/
 node_modules/
