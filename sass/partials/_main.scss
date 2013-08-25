@@ -140,8 +140,8 @@ nav[role="navigation"] {
 header {
   @include rem-calc(height, 55);
   background: $grey image-url("walled_garden.jpg") center top no-repeat;
-  // background-size: cover;
-  background-size: 100% auto;
+  background-size: cover;
+  // background-size: 100% auto;
   background-attachment: fixed;
   color: #FFF;
 
