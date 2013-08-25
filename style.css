@@ -662,8 +662,8 @@ nav[role="navigation"] {
   background: #75869c;
 }
 nav[role="navigation"] ul {
-  padding: 15px 20px;
-  padding: 1.5rem 2rem;
+  padding: 15px 100px 15px 20px;
+  padding: 1.5rem 10rem 1.5rem 2rem;
   margin: 0;
   position: relative;
 }

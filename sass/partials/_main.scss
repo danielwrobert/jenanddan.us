@@ -94,7 +94,7 @@ nav[role="navigation"] {
   background: $blue;
 
   ul {
-    @include rem-calc(padding, 1.5, 2);
+    @include rem-calc(padding, 1.5, 10, 1.5, 2);
     margin: 0;
     position: relative;
     
