@@ -119,7 +119,7 @@ nav[role="navigation"] {
         position: absolute;
         background: $peach;
         border-radius: 5px;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
         cursor: pointer;
 
         a {
@@ -146,7 +146,7 @@ header {
   color: #FFF;
 
   h1, h2 {
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
   }
 
   h1 { @include rem-calc(font-size, 5); }
@@ -222,6 +222,9 @@ header {
   h2 {
     @include rem-calc(font-size, 3.5);
     margin: 0;
+    color: $blue;
+
+    header & { color: #FFF; }
   }
 
   h3 { margin-bottom: 0; }
