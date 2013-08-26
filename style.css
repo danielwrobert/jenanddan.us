@@ -556,6 +556,16 @@ table {
     margin: 0;
   }
 }
+@media (min-width: 600px) {
+  .column2.reverse .column, .reverse.column3 .column {
+    margin-right: 0;
+    margin-left: 8%;
+    float: right;
+  }
+  .column2.reverse .column:last-of-type, .reverse.column3 .column:last-of-type {
+    margin: 0;
+  }
+}
 
 @media (min-width: 600px) {
   .column3 .column {
@@ -721,7 +731,7 @@ nav[role="navigation"] ul li:last-of-type:hover {
 header {
   height: 550px;
   height: 55rem;
-  background: #666666 url('img/walled_garden.jpg?1377463919') center top no-repeat;
+  background: #666666 url('img/walled_garden_blur.jpg?1377497154') center top no-repeat;
   background-size: cover;
   background-attachment: fixed;
   color: #FFF;
@@ -850,6 +860,19 @@ header .content {
 }
 .image_block.banner_two {
   background-image: url('img/palms.jpg?1376858178');
+}
+
+/*
+ *  Our Story
+ **/
+#us img {
+  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+@media (min-width: 860px) {
+  #us img {
+    width: 50%;
+  }
 }
 
 /*
