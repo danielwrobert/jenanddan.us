@@ -80,9 +80,6 @@ h4, h5, h6 {
   font-family: $header_font;
 }
 
-ul {
-  list-style-type: none;
-}
 
 /*
  *  Nav Section
@@ -97,6 +94,7 @@ nav[role="navigation"] {
     @include rem-calc(padding, 1.5, 10, 1.5, 2);
     margin: 0;
     position: relative;
+    list-style-type: none;
     
     li {
       @include rem-calc(margin-right, 1.5);
@@ -226,8 +224,9 @@ header {
   p { margin-top: 0; color: $grey; }
 
   ul {
+    @include rem-calc(padding, 0, 0, 0, 2);
     margin-top: 0;
-    padding: 0;
+    // padding: 0;
 
     li { color: $grey; }
   }
@@ -257,7 +256,9 @@ header {
     background-image: image-url("palms.jpg");
   }
 }
-
+.price_group {
+  @include rem-calc(margin-left, -2);
+}
 
 
 /*
