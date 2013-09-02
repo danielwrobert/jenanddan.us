@@ -90,11 +90,11 @@ nav[role="navigation"] {
   top: 0; left: 0;
   background: $blue;
 
-  .menu {
       @include rem-calc(padding, 1.1, 2);
       text-align: right;
+  .menu {
 
-    a {
+    // a {
       @include rem-calc(padding, 0.8, 1.5, 0.5);
       @include rem-calc(font-size, 2);
       @include inline-block();
@@ -106,7 +106,7 @@ nav[role="navigation"] {
       text-decoration: none;
 
       &:hover { background: lighten($blue, 5%); }
-    }
+    // }
   }
 
   ul {
@@ -146,6 +146,9 @@ nav[role="navigation"] {
   }
 
   @include breakpoint(medium) {
+    padding: 0;
+    text-align: left;
+    
     .menu { display: none; }
 
     ul {

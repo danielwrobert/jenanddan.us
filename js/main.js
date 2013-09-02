@@ -40,25 +40,34 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 // Wrap in IIFE to protect namespaces
 (function($) {
 	var lovers = {
-		pageSlide : function($link) {
-			$link.on("click", function() {
-				var target = $(this).attr("href");
-				$("html, body").animate({ scrollTop : $(target).offset().top }, 1000);
-				return false;
-			});
-		},
-    elementSlideToggle : function($btn) {
-      $btn.on("click", function() {
+    addMenuBtn : function() {
+      console.log("testing");
+      $("<a>", {
+          class : "menu",
+          href : "#nav_list",
+          text : "MENU",
+          click : function() {
+            navList = $(this).attr("href");
+            $(navList).slideToggle(200);
+            return false;
+          }
+      }).insertBefore("#nav_list");
+    },
+		pageNav : function(navLink, menuBtn) {
+      // Generate menu button is page is rendered below 600px width
+      if (matchMedia('screen and (max-width: 37.5em)').matches) {
+        this.addMenuBtn();
+      }
+      //When nav button is clicked, scroll page to target section
+      $(navLink).on("click", function() {
         var target = $(this).attr("href");
-        $(target).slideToggle(200);
+        $("html, body").animate({ scrollTop : $(target).offset().top }, 1000);
+        $(".menu").trigger("click");
         return false;
-      })
-    }
+      });
+		}
 	};
 
-	var $navLinks = $("#nav_list a");
-  var $navMenu = $(".menu a");
-
-	lovers.pageSlide($navLinks);
-  lovers.elementSlideToggle($navMenu);
+	var navLinks = "#nav_list a";
+	lovers.pageNav(navLinks);
 })(jQuery);
