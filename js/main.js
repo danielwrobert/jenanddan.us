@@ -40,15 +40,25 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 // Wrap in IIFE to protect namespaces
 (function($) {
 	var lovers = {
-		navSlide : function($link) {
+		pageSlide : function($link) {
 			$link.on("click", function() {
 				var target = $(this).attr("href");
 				$("html, body").animate({ scrollTop : $(target).offset().top }, 1000);
 				return false;
 			});
-		}
+		},
+    elementSlideToggle : function($btn) {
+      $btn.on("click", function() {
+        var target = $(this).attr("href");
+        $(target).slideToggle(200);
+        return false;
+      })
+    }
 	};
 
-	var $navLinks = $("nav a");
-	lovers.navSlide($navLinks);
+	var $navLinks = $("#nav_list a");
+  var $navMenu = $(".menu a");
+
+	lovers.pageSlide($navLinks);
+  lovers.elementSlideToggle($navMenu);
 })(jQuery);
