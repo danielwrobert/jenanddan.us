@@ -236,6 +236,18 @@ header {
 
     &:hover { color: lighten($grey, 10%); }
   }
+
+  iframe {
+    @include rem-calc(min-height, 40);
+    width: 100%;
+    border: 3px solid $blue;
+    
+    &.airports_map {
+      @include breakpoint(medium) {
+        width: 75%;
+      }
+    } 
+  }
 }
 .image_block {
   @include rem-calc(height, 50);
@@ -279,13 +291,6 @@ header {
 /*
  *  Directions/Accomodations
  **/
-.map {
-  iframe {
-    @include rem-calc(min-height, 40);
-    width: 100%;
-    border: 3px solid $blue;
-  }
-}
 
 
 
