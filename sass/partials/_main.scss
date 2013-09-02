@@ -331,7 +331,7 @@ header {
   img {
     @include rem-calc(margin-bottom, 2);
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       width: 50%;
     }
   }
