@@ -176,7 +176,7 @@ nav[role="navigation"] {
  *  Header Section
  **/
 header {
-  @include rem-calc(height, 60);
+  @include rem-calc(height, 65);
   background: $grey image-url("walled_garden_blur.jpg") center top no-repeat;
   background-size: cover;
   // background-size: 100% auto;
@@ -230,7 +230,7 @@ header {
     text-align: center;
   }
 
-  @include breakpoint(medium) {
+  @include breakpoint(small) {
     @include rem-calc(height, 55);
   }
 }
@@ -282,15 +282,19 @@ header {
   }
 
   iframe {
-    @include rem-calc(min-height, 40);
+    @include rem-calc(height, 25);
     width: 100%;
     border: 3px solid $blue;
     
-    &.airports_map {
-      @include breakpoint(medium) {
-        width: 75%;
-      }
-    } 
+    // &.airports_map {
+    //   @include breakpoint(medium) {
+    //     width: 75%;
+    //   }
+    // }
+
+    @include breakpoint(small) {
+      @include rem-calc(height, 40);
+    }
   }
 }
 .image_block {
