@@ -40,26 +40,26 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 // Wrap in IIFE to protect namespaces
 (function($) {
 	var lovers = {
-    addMenuBtn : function() {
-      console.log("testing");
+    addMenuBtn : function(siblingList) {
       $("<a>", {
           class : "menu",
-          href : "#nav_list",
+          href : "#",
           text : "MENU",
           click : function() {
-            navList = $(this).attr("href");
-            $(navList).slideToggle(200);
+            $(this).next().slideToggle(200);
             return false;
           }
-      }).insertBefore("#nav_list");
+      }).insertBefore(siblingList);
     },
-		pageNav : function(navLink, menuBtn) {
+		pageNav : function(navList) {
+      var $navLinks = $(navList+" a");
+
       // Generate menu button is page is rendered below 600px width
       if (matchMedia('screen and (max-width: 37.5em)').matches) {
-        this.addMenuBtn();
+        this.addMenuBtn(navList);
       }
       //When nav button is clicked, scroll page to target section
-      $(navLink).on("click", function() {
+      $navLinks.on("click", function() {
         var target = $(this).attr("href");
         $("html, body").animate({ scrollTop : $(target).offset().top }, 1000);
         $(".menu").trigger("click");
@@ -68,6 +68,6 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 		}
 	};
 
-	var navLinks = "#nav_list a";
-	lovers.pageNav(navLinks);
+	var navUL = "#nav_list";
+	lovers.pageNav(navUL);
 })(jQuery);
