@@ -73,7 +73,10 @@ body {
   color: $grey;
 }
 
-img { max-width: 100%; }
+img {
+  max-width: 100%;
+  border: $border;
+}
 
 h1, h2, h3,
 h4, h5, h6 {
@@ -287,7 +290,7 @@ header {
   iframe {
     @include rem-calc(height, 25);
     width: 100%;
-    border: 3px solid $blue;
+    border: $border;
     
     // &.airports_map {
     //   @include breakpoint(medium) {

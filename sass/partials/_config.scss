@@ -45,22 +45,24 @@ $grey: #666666;
 $grey_light: #d8cec5;
 
 
-
 /*===== Fonts =====*/
 $script_font: 'Engagement', cursive;
 $header_font: 'Rokkitt', serif;
-
-
 
 
 /*===== Dimensions =====*/
 $rembase:     16;
 $line-height: 24;
 
+
 /*===== Grid =====*/
 $gutter: 4%;
 
+
+/*===== Elements & Effects =====*/
 $bezier: cubic-bezier(0.6, 0, 0.4, 1);
+$border: 3px solid $blue;
+
 
 
 /* =MIXINS
