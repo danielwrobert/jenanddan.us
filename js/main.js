@@ -54,8 +54,8 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 		pageNav : function(navList) {
       var $navLinks = $(navList+" a");
 
-      // Generate menu button is page is rendered below 600px width
-      if (matchMedia('screen and (max-width: 37.5em)').matches) {
+      // Generate menu button is page is rendered below 760px width
+      if (matchMedia('screen and (max-width: 47.5em)').matches) {
         this.addMenuBtn(navList);
       }
       //When nav button is clicked, scroll page to target section

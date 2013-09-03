@@ -4,7 +4,7 @@
 	
 	.column {
 		
-		@include breakpoint(small) {
+		@include breakpoint(medium) {
 			width: 50% - $gutter;
 			margin-right: $gutter*2;
 			padding: 0;
@@ -18,7 +18,7 @@
 
 	&.reverse {
 		.column {
-			@include breakpoint(small) {
+			@include breakpoint(medium) {
 				margin-right: 0;
 				margin-left: $gutter*2;
 				float: right;
@@ -35,12 +35,12 @@
 	@extend .column2;
 	
 	.column {
-		// @include breakpoint(small) {
+		// @include breakpoint(medium) {
 		// 	width: 50% - $gutter;
 		// 	margin-right: $gutter*2;		
 		// }
 
-		@include breakpoint(small) {
+		@include breakpoint(medium) {
 			width: 33.333333333% - $gutter;
 			margin-right: $gutter*1.5;		
 		}

@@ -197,7 +197,7 @@ header {
 
   .main_header {
   	@include rem-calc(padding, 3.5, 2.5);
-    @include rem-calc(margin, 0,0,2.5);
+    @include rem-calc(margin, 0, 0, 2.5);
   	@include inline-block();
    	background: rgba(117,134,156,0.7);
     // background: $blue;
@@ -236,10 +236,12 @@ header {
     text-align: center;
   }
 
-  @include breakpoint(small) {
-    @include rem-calc(height, 52.5);
-
+  @include breakpoint(39.0625em) {
     h1 { @include rem-calc(font-size, 5); }
+
+    .main_header {
+      @include rem-calc(margin-bottom, 3.5);
+    }
   }
 }
 
@@ -264,14 +266,17 @@ header {
   }
 
   h2 {
-    @include rem-calc(font-size, 3.5);
+    @include rem-calc(font-size, 5);
     margin: 0;
-    color: $blue;
-
-    header & { color: #FFF; }
   }
 
   h3 {
+    @include rem-calc(margin, 0, 0, 0.5);
+    @include rem-calc(font-size, 2.5);
+    color: $blue;
+  }
+
+  h4 {
     @include rem-calc(margin, 1.5, 0, 0.5);
     @include rem-calc(font-size, 2);
   }
@@ -296,12 +301,6 @@ header {
     @include rem-calc(height, 25);
     width: 100%;
     border: $border;
-    
-    // &.airports_map {
-    //   @include breakpoint(medium) {
-    //     width: 75%;
-    //   }
-    // }
 
     @include breakpoint(small) {
       @include rem-calc(height, 30);
@@ -317,10 +316,20 @@ header {
   color: #FFF;
   
   h2 {
-    @include rem-calc(padding-top, 5);
-    @include rem-calc(font-size, 5);
+    padding: 0 2%;
+    @include rem-calc(padding-top, 15);
+    @include rem-calc(font-size, 6);
+    margin: 0;
+    color: #FFF;
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+    @include breakpoint(small) {
+      @include rem-calc(font-size, 8);
+    }
+    @include breakpoint(medium) {
+      @include rem-calc(font-size, 10);
+    }
   }
 
   &.banner_two {
@@ -343,6 +352,12 @@ header {
       width: 50%;
     }
   }
+
+  .content:first-of-type .column:last-of-type {
+    @include breakpoint(medium) {
+      @include rem-calc(padding-top, 3);
+    }
+  }
 }
 
 
@@ -350,7 +365,15 @@ header {
 /*
  *  Directions/Accomodations
  **/
+#info {
+  iframe {
+    @include rem-calc(margin-bottom, 1.6);
 
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+  }
+}
 
 
 /*

@@ -161,12 +161,12 @@ $border: 3px solid $blue;
 
 @mixin breakpoint($point) {
   @if $point == large {
-    // Minimum width of 960 pixels = 60.9375em.
+    // Minimum width of 960 pixels = 60em.
     @media (min-width: 960px) { @content; }
   }
   @else if $point == medium {
-    // Minimum width of 860 pixels = 53.75em.
-    @media (min-width: 860px) { @content; }
+    // Minimum width of 760 pixels = 47.5em.
+    @media (min-width: 760px) { @content; }
   }
   @else if $point == small {
     // Minimum width of 600 pixels = 37.5em.
