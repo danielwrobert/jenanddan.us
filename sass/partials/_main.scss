@@ -80,8 +80,9 @@ img {
 
 h1, h2, h3,
 h4, h5, h6 {
-  @include rem-calc(margin-top, 1.5);
+  margin: 0;
   font-family: $header_font;
+  line-height: 1;
 }
 
 
@@ -94,7 +95,7 @@ nav[role="navigation"] {
   top: 0; left: 0;
   background: $blue;
 
-      @include rem-calc(padding, 1.1, 2);
+      @include rem-calc(padding, 1, 2);
       text-align: right;
   .menu {
 
@@ -183,7 +184,7 @@ nav[role="navigation"] {
  *  Header Section
  **/
 header {
-  @include rem-calc(height, 65);
+  @include rem-calc(height, 55);
   background: $grey image-url("walled_garden_blur.jpg") center top no-repeat;
   background-size: cover;
   // background-size: 100% auto;
@@ -194,7 +195,10 @@ header {
     text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
   }
 
-  h1 { @include rem-calc(font-size, 5); }
+  h1 {
+    @include rem-calc(margin, 3.2, 0);
+    @include rem-calc(font-size, 4);
+  }
 
   .main_header {
   	@include rem-calc(padding, 3.5, 2.5);
@@ -231,14 +235,16 @@ header {
   }
 
   .content {
-    @include rem-calc(padding, 7, 0, 0);
+    @include rem-calc(padding, 9, 0, 0);
     height: 100%;
     color: #fff;
     text-align: center;
   }
 
   @include breakpoint(small) {
-    @include rem-calc(height, 55);
+    @include rem-calc(height, 52.5);
+
+    h1 { @include rem-calc(font-size, 5); }
   }
 }
 
@@ -270,7 +276,10 @@ header {
     header & { color: #FFF; }
   }
 
-  h3 { margin-bottom: 0; }
+  h3 {
+    @include rem-calc(margin, 1.5, 0, 0.5);
+    @include rem-calc(font-size, 2);
+  }
 
   p { margin-top: 0; color: $grey; }
 
