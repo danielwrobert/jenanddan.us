@@ -90,28 +90,23 @@ h4, h5, h6 {
  *  Nav Section
  **/
 nav[role="navigation"] {
+  @include rem-calc(padding, 1, 2);
   width: 100%;
   position: fixed;
   top: 0; left: 0;
   background: $blue;
+  text-align: right;
 
-      @include rem-calc(padding, 1, 2);
-      text-align: right;
   .menu {
-
-    // a {
-      @include rem-calc(padding, 0.8, 1.5, 0.5);
-      @include rem-calc(font-size, 2);
-      @include inline-block();
-      background: darken($blue, 10%);
-      border-radius: 5px;
-      color: $peach;
-      font-family: $header_font;
-      letter-spacing: 1px;
-      text-decoration: none;
-
-      &:hover { background: lighten($blue, 5%); }
-    // }
+    @include rem-calc(padding, 0.8, 1.5, 0.5);
+    @include rem-calc(font-size, 2);
+    @include inline-block();
+    background: darken($blue, 10%);
+    border-radius: 5px;
+    color: $peach;
+    font-family: $header_font;
+    letter-spacing: 1px;
+    text-decoration: none;
   }
 
   ul {
