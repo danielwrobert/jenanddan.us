@@ -1,48 +1,48 @@
 .column2 {
-	@include clearfix();
-	@include rem-calc(padding, 1.5, 0);
-	
-	.column {
-		
-		@include breakpoint(medium) {
-			width: 50% - $gutter;
-			margin-right: $gutter*2;
-			padding: 0;
-			float: left;
-			
-			&:last-of-type {
-				margin: 0;
-			}
-		}
-	}
+    @include clearfix();
+    @include rem-calc(padding, 1.5, 0);
+    
+    .column {
+        
+        @include breakpoint(medium) {
+            width: 50% - $gutter;
+            margin-right: $gutter*2;
+            padding: 0;
+            float: left;
+            
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
 
-	&.reverse {
-		.column {
-			@include breakpoint(medium) {
-				margin-right: 0;
-				margin-left: $gutter*2;
-				float: right;
-				
-				&:last-of-type {
-					margin: 0;
-				}
-			}
-		}
-	}
+    &.reverse {
+        .column {
+            @include breakpoint(medium) {
+                margin-right: 0;
+                margin-left: $gutter*2;
+                float: right;
+                
+                &:last-of-type {
+                    margin: 0;
+                }
+            }
+        }
+    }
 }
 
 .column3 {
-	@extend .column2;
-	
-	.column {
-		// @include breakpoint(medium) {
-		// 	width: 50% - $gutter;
-		// 	margin-right: $gutter*2;		
-		// }
+    @extend .column2;
+    
+    .column {
+        // @include breakpoint(medium) {
+        //  width: 50% - $gutter;
+        //  margin-right: $gutter*2;        
+        // }
 
-		@include breakpoint(medium) {
-			width: 33.333333333% - $gutter;
-			margin-right: $gutter*1.5;		
-		}
-	}
+        @include breakpoint(medium) {
+            width: 33.333333333% - $gutter;
+            margin-right: $gutter*1.5;      
+        }
+    }
 }

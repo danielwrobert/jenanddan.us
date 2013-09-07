@@ -69,20 +69,20 @@ $border: 3px solid $blue;
 -------------------------------------------------------------- */
 
 @mixin text_wrap() {
-	white-space: pre;           /* CSS 2.0 */
-	white-space: pre-wrap;      /* CSS 2.1 */
-	white-space: pre-line;      /* CSS 3.0 */
-	white-space: -pre-wrap;     /* Opera 4-6 */
-	white-space: -o-pre-wrap;   /* Opera 7 */
-	white-space: -moz-pre-wrap; /* Mozilla */
-	white-space: -hp-pre-wrap;  /* HP Printers */
-	word-wrap: break-word;      /* IE 5+ */
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
 }
 
 
 // TODO: Test this ... may need some adjustments.
 @mixin font-stack($font) {
-	@font-face {
+    @font-face {
     font-family: '$font';
     src: url('$font.eot');
     src: url('$font.eot?#iefix') format('embedded-opentype'),
@@ -92,53 +92,53 @@ $border: 3px solid $blue;
     font-weight: normal;
     font-style: normal;
 
-	}
+    }
 }
 
 
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+    @return $num / ($num * 0 + 1);
 }
 
 @mixin rem-calc($property, $values...) {
-  $max: length($values);
-  $pxValues: '';
-  $remValues: '';
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
 
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $pxValues: #{$pxValues + $value*10}px;
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $pxValues: #{$pxValues + $value*10}px;
 
-    @if $i < $max {
-      $pxValues: #{$pxValues + " "};
-    }
-  } 
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    } 
 
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $remValues: #{$remValues + $value}rem;
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $remValues: #{$remValues + $value}rem;
 
-    @if $i < $max {
-      $remValues: #{$remValues + " "};
-    }
-  } 
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    } 
   
-  #{$property}: $pxValues; 
-  #{$property}: $remValues; 
+    #{$property}: $pxValues; 
+    #{$property}: $remValues; 
 }
 
 
 @mixin fpr($width:100%, $dir:left) {
-  float:$dir; position:relative;
-  width:$width;
+    float:$dir; position:relative;
+    width:$width;
 }
 
 
 
 @mixin text-truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
@@ -160,21 +160,21 @@ $border: 3px solid $blue;
 
 
 @mixin breakpoint($point) {
-  @if $point == large {
-    // Minimum width of 960 pixels = 60em.
-    @media (min-width: 960px) { @content; }
-  }
-  @else if $point == medium {
-    // Minimum width of 760 pixels = 47.5em.
-    @media (min-width: 760px) { @content; }
-  }
-  @else if $point == small {
-    // Minimum width of 600 pixels = 37.5em.
-    @media (min-width: 600px)  { @content; }
-  }
-  @else {
-    @media (min-width: $point) { @content; }
-  }
+    @if $point == large {
+        // Minimum width of 960 pixels = 60em.
+        @media (min-width: 960px) { @content; }
+    }
+    @else if $point == medium {
+        // Minimum width of 760 pixels = 47.5em.
+        @media (min-width: 760px) { @content; }
+    }
+    @else if $point == small {
+        // Minimum width of 600 pixels = 37.5em.
+        @media (min-width: 600px)  { @content; }
+    }
+    @else {
+        @media (min-width: $point) { @content; }
+    }
 }
 
 
