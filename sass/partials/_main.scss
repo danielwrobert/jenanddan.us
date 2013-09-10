@@ -384,7 +384,34 @@ nav[role="navigation"] {
 		border: none;
 	}
 	.brand_logo {
+		@include rem-calc(margin-bottom, 2);
 		text-align: center;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		img {
+			-webkit-transition: all 0.3s ease-out;
+			-moz-transition: all 0.3s ease-out;
+			transition: all 0.3s ease-out;
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
+
+			&:hover {
+				-webkit-filter: grayscale(0%);
+				filter: grayscale(0%);
+			}
+		}
+	}
+	@include breakpoint(medium) {
+		.brand_logo {
+			margin-bottom: 0;
+
+			&.anthrolopogie {
+				@include rem-calc(margin-bottom, 4);
+			}
+		}
 	}
 }
 
