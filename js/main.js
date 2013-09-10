@@ -78,7 +78,4 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 		}
 	};
 	lovers.init();
-
-	// var navUL = "#nav_list";
-	// lovers.pageNav(navUL);
 })(jQuery);

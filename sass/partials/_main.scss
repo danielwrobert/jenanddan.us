@@ -317,7 +317,7 @@ nav[role="navigation"] {
     
     h2 {
         padding: 0 2%;
-        @include rem-calc(padding-top, 15);
+        @include rem-calc(padding-top, 20);
         @include rem-calc(font-size, 6);
         margin: 0;
         color: #FFF;
