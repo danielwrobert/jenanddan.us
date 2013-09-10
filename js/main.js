@@ -39,7 +39,17 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 
 // Wrap in IIFE to protect namespaces
 (function($) {
+	var navUL = "#nav_list";
+	
 	var lovers = {
+		init : function() {
+			if (!Modernizr.svg) {
+				$('img[src$=".svg"]').each(function() {
+					$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
+				});
+			}
+			lovers.pageNav(navUL);
+		},
         addMenuBtn : function(siblingList) {
             $("<a>", {
                 class : "menu",
@@ -67,7 +77,8 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
             });
 		}
 	};
+	lovers.init();
 
-	var navUL = "#nav_list";
-	lovers.pageNav(navUL);
+	// var navUL = "#nav_list";
+	// lovers.pageNav(navUL);
 })(jQuery);
