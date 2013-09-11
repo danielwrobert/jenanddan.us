@@ -180,7 +180,7 @@ nav[role="navigation"] {
  **/
     header {
         @include rem-calc(height, 55);
-        background: $grey image-url("walled_garden_blur.jpg") center top no-repeat;
+        background: $grey image-url("engagement_photos/lovers_field.jpg") center top no-repeat;
         background-size: cover;
         // background-size: 100% auto;
         background-attachment: fixed;
@@ -309,7 +309,7 @@ nav[role="navigation"] {
 }
 .image_block {
     @include rem-calc(height, 50);
-    background: transparent image-url("encinitas.jpg") center top no-repeat;
+    background: transparent image-url("engagement_photos/lovers_nose.jpg") center top no-repeat;
     background-size: cover;
     // background-size: 100% auto;
     background-attachment: fixed;
@@ -333,7 +333,13 @@ nav[role="navigation"] {
     }
 
     &.banner_two {
+        background-image: image-url("encinitas.jpg");
+    }
+    &.banner_three {
         background-image: image-url("palms.jpg");
+    }
+    &.banner_four {
+        background-image: image-url("engagement_photos/lovers_hands.jpg");
     }
 }
 .price_group {
