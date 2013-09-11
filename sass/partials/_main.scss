@@ -180,7 +180,7 @@ nav[role="navigation"] {
  **/
     header {
         @include rem-calc(height, 55);
-        background: $grey image-url("engagement_photos/lovers_field.jpg") center top no-repeat;
+        background: $grey image-url("lovers_field.jpg") center top no-repeat;
         background-size: cover;
         // background-size: 100% auto;
         background-attachment: fixed;
@@ -284,12 +284,21 @@ nav[role="navigation"] {
     p { margin-top: 0; color: $grey; }
 
     ul {
-        @include rem-calc(padding, 0, 0, 0, 2);
+        @include rem-calc(padding, 0, 0, 0, 1);
         margin-top: 0;
 		list-style-type: none;
         // padding: 0;
 
-        li { color: $grey; }
+        li {
+			color: $grey;
+
+			&.price_group {
+				@include rem-calc(margin-left, -1);
+				color: $blue;
+				font-weight: bold;
+			}
+			
+		}
     }
 
     a {
@@ -310,7 +319,7 @@ nav[role="navigation"] {
 }
 .image_block {
     @include rem-calc(height, 50);
-    background: transparent image-url("engagement_photos/lovers_nose.jpg") center top no-repeat;
+    background: transparent image-url("lovers_nose.jpg") center top no-repeat;
     background-size: cover;
     // background-size: 100% auto;
     background-attachment: fixed;
@@ -340,11 +349,8 @@ nav[role="navigation"] {
         background-image: image-url("palms.jpg");
     }
     &.banner_four {
-        background-image: image-url("engagement_photos/lovers_hands.jpg");
+        background-image: image-url("lovers_hands.jpg");
     }
-}
-.price_group {
-    @include rem-calc(margin-left, -2);
 }
 
 
