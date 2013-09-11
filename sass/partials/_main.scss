@@ -114,7 +114,7 @@ nav[role="navigation"] {
         margin: 0 0 20px 0;
         padding: 0;
         position: relative;
-        list-style-type: none;
+        //list-style-type: none;
         text-align: center;
 
         li {
@@ -286,6 +286,7 @@ nav[role="navigation"] {
     ul {
         @include rem-calc(padding, 0, 0, 0, 2);
         margin-top: 0;
+		list-style-type: none;
         // padding: 0;
 
         li { color: $grey; }
@@ -350,7 +351,7 @@ nav[role="navigation"] {
 /*
  *  Our Story
  **/
-#us {
+#our_story {
     img {
         @include rem-calc(margin-bottom, 2);
 
@@ -398,15 +399,16 @@ nav[role="navigation"] {
 		}
 
 		img {
-			-webkit-transition: all 0.3s ease-out;
-			-moz-transition: all 0.3s ease-out;
-			transition: all 0.3s ease-out;
+			-webkit-transition: all 0.5s ease-out;
+			transition: all 0.5s ease-out;
 			-webkit-filter: grayscale(100%);
 			filter: grayscale(100%);
+			opacity: 0.6;
 
 			&:hover {
 				-webkit-filter: grayscale(0%);
 				filter: grayscale(0%);
+				opacity: 1;
 			}
 		}
 	}
