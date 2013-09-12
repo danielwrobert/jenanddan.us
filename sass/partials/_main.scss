@@ -96,6 +96,7 @@ nav[role="navigation"] {
     top: 0; left: 0;
     background: $blue;
     text-align: right;
+	z-index: 2;
 
     .menu {
         @include rem-calc(padding, 0.8, 1.5, 0.5);
@@ -346,7 +347,7 @@ nav[role="navigation"] {
         background-image: image-url("encinitas.jpg");
     }
     &.banner_three {
-        background-image: image-url("palms.jpg");
+        background-image: image-url("gift_registry.jpg");
     }
     &.banner_four {
         background-image: image-url("lovers_hands.jpg");
