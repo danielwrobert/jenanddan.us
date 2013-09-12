@@ -290,6 +290,10 @@ nav[role="navigation"] {
 		list-style-type: none;
         // padding: 0;
 
+		&.venue_address {
+			padding: 0;
+		}
+
         li {
 			color: $grey;
 
@@ -313,11 +317,22 @@ nav[role="navigation"] {
         width: 100%;
         border: $border;
 
+		#travel & {
+			@include rem-calc(margin-bottom, 1.5);
+		}
+
         @include breakpoint(small) {
             @include rem-calc(height, 30);
         }
     }
 }
+
+.em_text {
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+}
+
 .image_block {
     @include rem-calc(height, 50);
     background: transparent image-url("lovers_nose.jpg") center top no-repeat;
@@ -347,7 +362,7 @@ nav[role="navigation"] {
         background-image: image-url("encinitas.jpg");
     }
     &.banner_three {
-        background-image: image-url("gift_registry.jpg");
+        background-image: image-url("lovers_hands.jpg");
     }
     &.banner_four {
         background-image: image-url("lovers_hands.jpg");
