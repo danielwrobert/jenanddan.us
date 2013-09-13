@@ -290,8 +290,12 @@ nav[role="navigation"] {
 		list-style-type: none;
         // padding: 0;
 
-		&.venue_address {
+		#info & {
 			padding: 0;
+
+			&:first-of-type {
+				@include rem-calc(margin-bottom, 2.5);
+			}
 		}
 
         li {
@@ -329,6 +333,11 @@ nav[role="navigation"] {
 
 .em_text {
 	font-weight: bold;
+	font-style: italic;
+}
+
+.footnote {
+	font-size: 14px;
 	font-style: italic;
 }
 
