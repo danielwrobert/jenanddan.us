@@ -337,7 +337,7 @@ nav[role="navigation"] {
 }
 
 .footnote {
-	font-size: 14px;
+	@include rem-calc(font-size, 1.2);
 	font-style: italic;
 }
 
