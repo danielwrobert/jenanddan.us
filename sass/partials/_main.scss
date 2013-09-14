@@ -86,93 +86,6 @@ h4, h5, h6 {
 }
 
 
-/*
- *  Nav Section
- **/
-nav[role="navigation"] {
-    @include rem-calc(padding, 1, 2);
-    width: 100%;
-    position: fixed;
-    top: 0; left: 0;
-    background: $blue;
-    text-align: right;
-	z-index: 2;
-
-    .menu {
-        @include rem-calc(padding, 0.8, 1.5, 0.5);
-        @include rem-calc(font-size, 2);
-        @include inline-block();
-        background: darken($blue, 10%);
-        border-radius: 5px;
-        color: $peach;
-        font-family: $header_font;
-        letter-spacing: 1px;
-        text-decoration: none;
-    }
-
-    ul {
-        display: none;
-        margin: 0 0 20px 0;
-        padding: 0;
-        position: relative;
-        //list-style-type: none;
-        text-align: center;
-
-        li {
-            @include rem-calc(padding, 1, 0);
-            margin: 0 4%;
-
-            &:last-of-type {
-                background: $peach;
-                border-radius: 5px;
-                cursor: pointer;
-
-                &:hover { background: darken($peach, 5%); }
-
-                a { color: $blue; }
-            }
-
-            a {
-                @include rem-calc(font-size, 1.8);
-                @include rem-calc(letter-spacing, 0.1);
-                @include inline-block();
-                width: 100%; height: 100%;
-                color: $peach;
-                font-family: $header_font;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-        }
-    }
-
-    @include breakpoint(medium) {
-        padding: 0;
-        text-align: left;
-        
-        .menu { display: none; }
-
-        ul {
-            @include rem-calc(padding, 1.5, 10, 1.5, 2);
-            display: block;
-            margin: 0;
-            text-align: left;
-      
-            li {
-                @include rem-calc(margin-right, 1.5);
-                @include inline-block();
-                padding: 0;
-        
-                &:last-of-type {
-                    @include rem-calc(padding, 0.5, 1.5);
-                    @include rem-calc(top, 1);
-                    @include rem-calc(right, 0.6);
-                    position: absolute;
-                }
-            }
-        }
-    }
-}
-
 
 /*
  *  Header Section
@@ -180,8 +93,8 @@ nav[role="navigation"] {
     header {
         @include rem-calc(height, 55);
         background: $grey image-url("lovers_field.jpg") center top no-repeat;
-        background-size: cover;
-        // background-size: 100% auto;
+        //background-size: cover;
+        background-size: auto 37.5em;
         background-attachment: fixed;
         color: #FFF;
 
@@ -235,12 +148,16 @@ nav[role="navigation"] {
         text-align: center;
     }
 
+	// Minimum width of 625/16 pixels = 39.0625em.
     @include breakpoint(39.0625em) {
         h1 { @include rem-calc(font-size, 5); }
 
         .main_header {
             @include rem-calc(margin-bottom, 3.5);
         }
+    }
+    @include breakpoint(medium-large) {
+        background-size: 100% auto;
     }
 }
 
@@ -342,8 +259,8 @@ nav[role="navigation"] {
 .image_block {
     @include rem-calc(height, 50);
     background: transparent image-url("lovers_nose.jpg") center top no-repeat;
-    background-size: cover;
-    // background-size: 100% auto;
+    //background-size: cover;
+    background-size: auto 37.5em;
     background-attachment: fixed;
     color: #FFF;
     
@@ -373,6 +290,10 @@ nav[role="navigation"] {
     &.banner_four {
         background-image: image-url("lovers_hands.jpg");
     }
+
+	@include breakpoint(medium-large) {
+		background-size: 100% auto;
+	}
 }
 
 
