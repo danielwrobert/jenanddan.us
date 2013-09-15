@@ -93,9 +93,7 @@ h4, h5, h6 {
     header {
         @include rem-calc(height, 55);
         background: $grey image-url("lovers_field.jpg") center top no-repeat;
-        //background-size: cover;
         background-size: auto 37.5em;
-        background-attachment: fixed;
         color: #FFF;
 
         h1, h2 {
@@ -157,7 +155,8 @@ h4, h5, h6 {
         }
     }
     @include breakpoint(medium-large) {
-        background-size: 100% auto;
+        background-size: cover;
+        background-attachment: fixed;
     }
 }
 
@@ -251,6 +250,10 @@ h4, h5, h6 {
 	font-style: italic;
 }
 
+.center_align {
+	text-align: center;		
+}
+
 .footnote {
 	@include rem-calc(font-size, 1.2);
 	font-style: italic;
@@ -259,9 +262,7 @@ h4, h5, h6 {
 .image_block {
     @include rem-calc(height, 50);
     background: transparent image-url("lovers_nose.jpg") center top no-repeat;
-    //background-size: cover;
     background-size: auto 37.5em;
-    background-attachment: fixed;
     color: #FFF;
     
     h2 {
@@ -292,7 +293,8 @@ h4, h5, h6 {
     }
 
 	@include breakpoint(medium-large) {
-		background-size: 100% auto;
+		background-size: cover;
+		background-attachment: fixed;
 	}
 }
 
@@ -303,10 +305,6 @@ h4, h5, h6 {
 #our_story {
     img {
         @include rem-calc(margin-bottom, 2);
-
-        @include breakpoint(large) {
-            width: 50%;
-        }
     }
 
     .content:first-of-type .column:last-of-type {
