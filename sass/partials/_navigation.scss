@@ -32,7 +32,7 @@ nav[role="navigation"] {
         text-align: center;
 
         li {
-            @include rem-calc(padding, 1, 0);
+            @include rem-calc(padding, 1.5, 0);
             margin: 0 4%;
 
             &:last-of-type {
@@ -71,7 +71,7 @@ nav[role="navigation"] {
             text-align: left;
       
             li {
-                @include rem-calc(margin-right, 1.5);
+                @include rem-calc(margin, 0, 2.5, 0, 0);
                 @include inline-block();
                 padding: 0;
         
