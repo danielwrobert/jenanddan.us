@@ -306,7 +306,7 @@ h4, h5, h6 {
     img {
         @include rem-calc(margin-bottom, 2);
 
-		&[alt="Jen Avery"] {
+		&[alt="Dan Robert"] {
 			@include rem-calc(margin-top, 2);
 
 			@include breakpoint(medium) {
