@@ -350,7 +350,7 @@ h4, h5, h6 {
 		border: none;
 	}
 	.brand_logo {
-		@include rem-calc(margin-bottom, 2);
+		@include rem-calc(margin-bottom, 5);
 		text-align: center;
 
 		&:last-of-type {
@@ -374,10 +374,6 @@ h4, h5, h6 {
 	@include breakpoint(medium) {
 		.brand_logo {
 			margin-bottom: 0;
-
-			&.anthrolopogie {
-				@include rem-calc(margin-bottom, 4);
-			}
 		}
 	}
 }
