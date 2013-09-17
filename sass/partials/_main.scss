@@ -347,7 +347,7 @@ h4, h5, h6 {
 	@include rem-calc(margin-bottom, 4);
 	@include rem-calc(padding, 3, 2.5);
 	background-color: #fff;
-	//border-radius: 10px;
+	border-radius: 5px;
 	box-shadow: 1px 1px 0px rgba(0,0,0,0.1);
 
 	p { margin: 0; }

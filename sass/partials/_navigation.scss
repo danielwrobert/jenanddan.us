@@ -16,7 +16,7 @@ nav[role="navigation"] {
         @include rem-calc(font-size, 2);
         @include inline-block();
         background: darken($blue, 10%);
-        //border-radius: 5px;
+        border-radius: 5px;
         color: $peach;
         font-family: $header_font;
         letter-spacing: 1px;
@@ -37,7 +37,7 @@ nav[role="navigation"] {
 
             &:last-of-type {
                 background: $peach;
-                //border-radius: 5px;
+                border-radius: 5px;
                 cursor: pointer;
 
                 &:hover { background: darken($peach, 5%); }
