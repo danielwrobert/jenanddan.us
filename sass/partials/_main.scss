@@ -344,7 +344,7 @@ h4, h5, h6 {
 	}
 }
 .welcome {
-	@include rem-calc(margin-bottom, 2.5);
+	@include rem-calc(margin-bottom, 4);
 	@include rem-calc(padding, 3, 2.5);
 	background-color: #fff;
 	//border-radius: 10px;
