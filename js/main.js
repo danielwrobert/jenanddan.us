@@ -71,7 +71,12 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
             //When nav button is clicked, scroll page to target section
             $navLinks.on("click", function() {
                 var target = $(this).attr("href");
-                $("html, body").animate({ scrollTop : $(target).offset().top }, 1000);
+				if(target === "#home") {
+					console.log("HOME, THE ENGLISH ARE TOO MINNIE!");
+					$("html, body").animate({ scrollTop : 0 }, 1000);
+				} else {
+					$("html, body").animate({ scrollTop : $(target).offset().top }, 1000);
+				}
                 $(".menu").trigger("click");
                 return false;
             });
