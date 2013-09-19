@@ -263,6 +263,17 @@ h4, h5, h6 {
     }
 }
 
+.section_breaker {
+	@include rem-calc(width, 12.5);
+	@include rem-calc(height, 0.4);
+	@include rem-calc(bottom, -1.5);
+	margin: 0 auto;
+	position: relative;
+	border-top: 1px solid $blue;
+	border-bottom: 1px solid $blue;
+	opacity: 0.5;
+}
+
 .em_text {
 	font-weight: bold;
 	font-style: italic;
@@ -316,6 +327,16 @@ h4, h5, h6 {
 	}
 }
 
+.tiny_hearts {
+	@include rem-calc(top, -2);
+	position: relative;
+	text-align: center;
+	opacity: 0.7;
+
+	img {
+		border: none;
+	}
+}
 
 /*
  *  Our Story
