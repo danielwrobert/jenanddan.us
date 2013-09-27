@@ -312,7 +312,7 @@ h4, h5, h6 {
     }
 
     &.banner_two {
-        background-image: image-url("encinitas.jpg");
+        background-image: image-url("lovers_location.jpg");
     }
     &.banner_three {
         background-image: image-url("lovers_hands.jpg");
@@ -349,7 +349,7 @@ h4, h5, h6 {
 			@include rem-calc(margin-top, 2);
 
 			@include breakpoint(medium) {
-				@include rem-calc(margin-top, 0.5);
+				@include rem-calc(margin-top, 0);
 			}
 		}
     }
