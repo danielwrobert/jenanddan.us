@@ -315,10 +315,13 @@ h4, h5, h6 {
         background-image: image-url("lovers_location.jpg");
     }
     &.banner_three {
-        background-image: image-url("lovers_hands.jpg");
+        background-image: image-url("lovers_walk.jpg");
     }
     &.banner_four {
         background-image: image-url("lovers_hands.jpg");
+    }
+    &.banner_five {
+        background-image: image-url("lovers_nose.jpg");
     }
 
 	@include breakpoint(medium-large) {
