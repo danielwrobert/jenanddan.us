@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//session_start();
 
 //error checking
 if (!empty($_POST)){
@@ -61,8 +61,8 @@ if (!empty($_POST)){
 			$body .= 'Email: '.$_POST['email']."\r\n";
 			$body .= 'Message: '.$_POST['message']."\r\n";
 
-			$headers = 'From: info@eldano.com' . "\r\n" .
-					    'Reply-To: info@eldano.com' . "\r\n" .
+			$headers = 'From: rsvp@danandjen.us' . "\r\n" .
+					    'Reply-To: rsvp@danandjen.us' . "\r\n" .
 					    'X-Mailer: PHP/' . phpversion();
 
 			mail ($to_email, $subject, $body, $headers);
