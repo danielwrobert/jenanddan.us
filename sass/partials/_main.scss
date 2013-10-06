@@ -86,7 +86,6 @@ h4, h5, h6 {
 }
 
 
-
 /*
  *  Header Section
  **/
@@ -159,7 +158,6 @@ h4, h5, h6 {
         background-attachment: fixed;
     }
 }
-
 
 
 /*
@@ -341,6 +339,11 @@ h4, h5, h6 {
 	}
 }
 
+.flexible_video_wrap {
+	@include flexible-videos();
+}
+
+
 /*
  *  Our Story
  **/
@@ -378,7 +381,6 @@ h4, h5, h6 {
 }
 
 
-
 /*
  *  Registry 
  **/
@@ -412,6 +414,16 @@ h4, h5, h6 {
 		.brand_logo {
 			margin-bottom: 0;
 		}
+	}
+}
+
+
+/*
+ *  Photos
+ **/
+#photos {
+	.content {
+		@include rem-calc(padding-bottom, 1.5);
 	}
 }
 
