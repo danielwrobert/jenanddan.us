@@ -34,8 +34,8 @@
                 <li><a href="#our_story">Our Story</a></li>
                 <li><a href="#info">Wedding Details</a></li>
                 <li><a href="#location">Location</a></li>
+                <li><a href="#photos">Photos</a></li>
                 <li><a href="#registry">Registry</a></li>
-                <!-- <li><a href="#photos">Photos</a></li> -->
                 <li><a class="button" href="mailto:rsvp@danandjen.us">RSVP</a></li>
             </ul>
         </nav>
@@ -201,24 +201,27 @@
 				<p>Please RSVP via the form below.</p>
 				<form action="form.php">
 					<p>
-						<label for=""></label>
-						<input type="">
+						<label for="name">Name</label>
+						<input type="text" name="name" placeholder="Willy Wonka" required>
 					</p>
 					<p>
-						<label for=""></label>
-						<input type="">
+						<label for="email">Email Address</label>
+						<input type="email" name="email" placeholder="willywonka@gmail.com" required>
 					</p>
 					<p>
-						<label for=""></label>
-						<input type="">
+						<label for="number">Number Attending</label>
+						<input type="number" name="number" required>
 					</p>
 					<p>
-						<label for=""></label>
-						<input type="">
+						<label for="diet">Dietary Restrictions</label>
+						<input type="text" name="diet">
 					</p>
 					<p>
-						<label for=""></label>
-						<input type="">
+						<label for="message">Message</label>
+						<textarea name="message"></textarea>
+					</p>
+					<p>
+						<input type="submit">
 					</p>
 				</form>
             </div>
