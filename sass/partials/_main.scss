@@ -423,7 +423,7 @@ h4, h5, h6 {
  **/
 #photos {
 	.content {
-		@include rem-calc(padding-bottom, 1.5);
+		@include rem-calc(padding, 1.5, 0);
 	}
 }
 
@@ -442,8 +442,30 @@ h4, h5, h6 {
 		}
 	}
 
+	input {
+		@include rem-calc(padding, 1.2);
+		width: 100%;
+		border: none;
+
+		&[type="submit"] {
+			background-color: $blue;
+			color: $peach;
+			text-transform: uppercase;
+		}
+	}
+
 	textarea {
+		@extend input;
 		resize: none;
+	}
+
+	.content {
+		@include breakpoint(medium) {
+			width: 75%;
+		}
+		@include breakpoint(large) {
+			width: 50%;
+		}
 	}
 }
 
