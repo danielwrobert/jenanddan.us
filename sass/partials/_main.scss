@@ -432,7 +432,13 @@ h4, h5, h6 {
  *  RSVP
  **/
 #rsvp {
-	label { display: block; }
+	label {
+		display: block;
+
+		&.checklist {
+			@include rem-calc(padding-left, 1);
+		}
+	}
 
 	textarea {
 		resize: none;
