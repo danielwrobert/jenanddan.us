@@ -446,8 +446,11 @@ h4, h5, h6 {
 		@include rem-calc(padding, 1.2);
 		width: 100%;
 		border: none;
+		border-radius: 5px;
 
 		&[type="submit"] {
+			@include rem-calc(padding, 1.2, 1.5);
+			width: auto;
 			background-color: $blue;
 			color: $peach;
 			text-transform: uppercase;
