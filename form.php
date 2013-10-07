@@ -8,24 +8,17 @@ if (!empty($_POST)){
 	$error = array();
 
 	//First Name
-	if (empty($_POST['fname'])){
-		$error['fname'] = 'Please enter your first name.';
+	if (empty($_POST['name'])){
+		$error['name'] = 'Please enter your name.';
 	}
-	else if (strlen($_POST['fname']) > 50){
-		$error['fname'] = 'First name is too long (50 max).';
+	else if (strlen($_POST['name']) > 50){
+		$error['name'] = 'Name input must be less than 50 characters.';
 	}
 
-	//Last Name
-	if (empty($_POST['lname'])){
-		$error['lname'] = 'Please enter your last name.';
-	}
-	else if (strlen($_POST['lname']) > 50){
-		$error['lname'] = 'Last name is too long (50 max).';
-	}
 
 	//Email
 	if (empty($_POST['email'])){
-		$error['email'] = 'Please enter your email.';
+		$error['email'] = 'Please enter a valid email address.';
 	}
 	else if (strlen($_POST['email']) < 5){
 		$error['email'] = 'Your email is too short (5 min).';
@@ -46,19 +39,14 @@ if (!empty($_POST)){
 		$error['message'] = 'message is too long (500 max)';
 	}
 
-	//Captcha
-	if ($_SESSION['c_verify'] != $_POST['captcha']){
-		$error['captcha'] = 'characters do not match';
-	}
-
 
 	//Send email message after complete form submitted
 	if (empty($error)){
 			$to_email = 'rsvp@danandjen.us';
 			$subject = 'RSVP from:'.$_POST['email']."\r\n";
-			$body = 'First Name: '.$_POST['fname']."\r\n";
-			$body .= 'Last Name: '.$_POST['lname']."\r\n";
+			$body = 'Name: '.$_POST['name']."\r\n";
 			$body .= 'Email: '.$_POST['email']."\r\n";
+			$body .= 'Number Attending: '.$_POST['number']."\r\n";
 			$body .= 'Message: '.$_POST['message']."\r\n";
 
 			$headers = 'From: rsvp@danandjen.us' . "\r\n" .
