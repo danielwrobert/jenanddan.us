@@ -86,7 +86,6 @@ h4, h5, h6 {
 }
 
 
-
 /*
  *  Header Section
  **/
@@ -159,7 +158,6 @@ h4, h5, h6 {
         background-attachment: fixed;
     }
 }
-
 
 
 /*
@@ -315,10 +313,13 @@ h4, h5, h6 {
         background-image: image-url("lovers_location.jpg");
     }
     &.banner_three {
-        background-image: image-url("lovers_hands.jpg");
+        background-image: image-url("lovers_walk.jpg");
     }
     &.banner_four {
         background-image: image-url("lovers_hands.jpg");
+    }
+    &.banner_five {
+        background-image: image-url("lovers_nose.jpg");
     }
 
 	@include breakpoint(medium-large) {
@@ -337,6 +338,11 @@ h4, h5, h6 {
 		border: none;
 	}
 }
+
+.flexible_video_wrap {
+	@include flexible-videos();
+}
+
 
 /*
  *  Our Story
@@ -375,7 +381,6 @@ h4, h5, h6 {
 }
 
 
-
 /*
  *  Registry 
  **/
@@ -408,6 +413,61 @@ h4, h5, h6 {
 	@include breakpoint(medium) {
 		.brand_logo {
 			margin-bottom: 0;
+		}
+	}
+}
+
+
+/*
+ *  Photos
+ **/
+#photos {
+	.content {
+		@include rem-calc(padding, 1.5, 0);
+	}
+}
+
+
+/*
+ *  RSVP
+ **/
+#rsvp {
+	@extend #photos;
+
+	label {
+		display: block;
+
+		&.checklist {
+			@include rem-calc(padding-left, 1);
+		}
+	}
+
+	input {
+		@include rem-calc(padding, 1.2);
+		width: 100%;
+		border: none;
+		border-radius: 5px;
+
+		&[type="submit"] {
+			@include rem-calc(padding, 1.2, 1.5);
+			width: auto;
+			background-color: $blue;
+			color: $peach;
+			text-transform: uppercase;
+		}
+	}
+
+	textarea {
+		@extend input;
+		resize: none;
+	}
+
+	.content {
+		@include breakpoint(medium) {
+			width: 75%;
+		}
+		@include breakpoint(large) {
+			width: 50%;
 		}
 	}
 }
