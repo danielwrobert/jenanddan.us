@@ -26,6 +26,11 @@ if (!empty($_POST)) {
 		$error['email'] = 'Your email is too long (100 max).';
 	}
 
+	//NUMBER
+	if ((empty($_POST['number'])) || (strlen($_POST['number']) < 0)) {
+		$error['number'] = 'Please enter a valid head count.';
+	}
+
 	//Send email message after complete form submitted
 	if (empty($error)){
 			$to_email = 'rsvp@danandjen.us';
@@ -45,6 +50,6 @@ if (!empty($_POST)) {
 	}
 }
 
-exit;
+//exit;
 
 ?>

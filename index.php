@@ -1,4 +1,58 @@
-<?php include('header.php'); ?>
+<?php
+	//session_start();
+	
+	//error checking
+	if (!empty($_POST)) {
+	
+		$error = array();
+	
+		//First Name
+		if (empty($_POST['name'])) {
+			$error['name'] = 'Please enter your name.';
+		}
+		else if (strlen($_POST['name']) > 50) {
+			$error['name'] = 'Name input must be less than 50 characters.';
+		}
+	
+		//Email
+		if (empty($_POST['email'])) {
+			$error['email'] = 'Please enter a valid email address.';
+		}
+		else if (strlen($_POST['email']) < 5) {
+			$error['email'] = 'Your email is too short (5 min).';
+		}
+		else if (strlen($_POST['email']) > 100) {
+			$error['email'] = 'Your email is too long (100 max).';
+		}
+	
+		//NUMBER
+		if ((empty($_POST['number'])) || (strlen($_POST['number']) < 0)) {
+			$error['number'] = 'Please enter a valid head count.';
+		}
+	
+		//Send email message after complete form submitted
+		if (empty($error)){
+				$to_email = 'rsvp@danandjen.us';
+				$subject = 'RSVP from:'.$_POST['email']."\r\n";
+				$body = 'Name: '.$_POST['name']."\r\n";
+				$body .= 'Email: '.$_POST['email']."\r\n";
+				$body .= 'Number Attending: '.$_POST['number']."\r\n";
+				$body .= 'Message: '.$_POST['message']."\r\n";
+	
+				$headers = 'From: rsvp@danandjen.us' . "\r\n" .
+						    'Reply-To: rsvp@danandjen.us' . "\r\n" .
+						    'X-Mailer: PHP/' . phpversion();
+	
+				mail($to_email, $subject, $body, $headers);
+	
+				header('location:contact-confirm.php');
+		}
+	}
+	
+	//exit;
+	
+	include('header.php');
+?>
 
         <section class="content_block" id="our_story">
 			<div class="tiny_hearts"><img src="img/tiny_hearts.svg" alt="Tiny Hearts"></div>
@@ -149,28 +203,29 @@
             <div class="content">
 				<h3>Join Us!</h3>
 				<p>Please RSVP via the form below. <em>(* Required Fields)</em></p>
-				<form action="process-form.php" method="post">
+				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 					<p>
 						<label for="name">Name *</label>
-						<input type="text" name="name" placeholder="Willy Wonka" required>
+						<input type="text" name="name" value="<?php echo htmlspecialchars('name'); ?>" placeholder="Willy Wonka" required>
 					</p>
 					<p>
 						<label for="email">Email Address *</label>
-						<input type="email" name="email" placeholder="willywonka@thechocolatefactory.com" required>
+					<input type="email" name="email" value="<?php echo htmlspecialchars('email'); ?>" placeholder="willywonka@thechocolatefactory.com" required>
 					</p>
 					<p>
 						<label for="number">Number Attending *</label>
-						<input type="number" name="number" required>
+						<input type="number" name="number" value="<?php echo htmlspecialchars('number'); ?>" required>
 					</p>
 					<p>Dietary Restrictions
-						<label class="checklist" for="none">None <input type="checkbox" name="none" value="None" checked="checked"></label>
-						<label class="checklist" for="vegetarian">Vegetarian <input type="checkbox" name="vegetarian" value="Vegetarian"></label>
-						<label class="checklist" for="vegan">Vegan <input type="checkbox" name="vegan" value="Vegan"></label>
-						<label class="checklist" for="gluten-free">Gluten-Free <input type="checkbox" name="gluten-free" value="Gluten-Free"></label>
+						<label class="checklist" for="none">None <input type="checkbox" name="none" value="<?php echo htmlspecialchars('none'); ?>" checked="checked"></label>
+						<label class="checklist" for="vegetarian">Vegetarian <input type="checkbox" name="vegetarian" value="<?php echo htmlspecialchars('vegetarian'); ?>"></label>
+						<label class="checklist" for="vegan">Vegan <input type="checkbox" name="vegan" value="<?php echo htmlspecialchars('vegan'); ?>"></label>
+						<label class="checklist" for="gluten-free">Gluten-Free <input type="checkbox" name="gluten-free" value="<?php echo htmlspecialchars('gluten-free'); ?>"></label>
+						<label class="checklist" for="vegan">Vegan <input type="checkbox" name="vegan" value="<?php echo htmlspecialchars('vegan'); ?>" ></label>
 					</p>
 					<p>
 						<label for="message">Message</label>
-						<textarea name="message"></textarea>
+						<textarea name="message"><?php echo htmlspecialchars('message'); ?></textarea>
 					</p>
 					<p>
 						<input type="submit">
