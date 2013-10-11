@@ -343,6 +343,11 @@ h4, h5, h6 {
 	@include flexible-videos();
 }
 
+.thankyou {
+	@include rem-calc(padding, 2.5, 0);	
+	text-align: center;
+}
+
 
 /*
  *  Our Story

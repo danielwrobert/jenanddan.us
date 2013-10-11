@@ -33,7 +33,7 @@
 		//Send email message after complete form submitted
 		if (empty($error)){
 				$to_email = 'rsvp@danandjen.us';
-				$subject = 'RSVP from:'.$_POST['email']."\r\n";
+				$subject = 'RSVP from:'.$_POST['name']."\r\n";
 				$body = 'Name: '.$_POST['name']."\r\n";
 				$body .= 'Email: '.$_POST['email']."\r\n";
 				$body .= 'Number Attending: '.$_POST['number']."\r\n";
@@ -203,14 +203,14 @@
             <div class="content">
 				<h3>Join Us!</h3>
 				<p>Please RSVP via the form below. <em>(* Required Fields)</em></p>
-				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 					<p>
 						<label for="name">Name *</label>
-						<input type="text" name="name" value="<?php echo htmlspecialchars('name'); ?>" placeholder="Willy Wonka" required>
+						<input type="text" name="name" value="<?php echo $_POST['name']; ?>" placeholder="Willy Wonka" required>
 					</p>
 					<p>
 						<label for="email">Email Address *</label>
-					<input type="email" name="email" value="<?php echo htmlspecialchars('email'); ?>" placeholder="willywonka@thechocolatefactory.com" required>
+					<input type="email" name="email" value="<?php echo $_POST['email']; ?>" placeholder="willywonka@thechocolatefactory.com" required>
 					</p>
 					<p>
 						<label for="number">Number Attending *</label>
