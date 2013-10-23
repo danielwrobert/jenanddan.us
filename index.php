@@ -210,11 +210,12 @@
 					</p>
 					<p>
 						<label for="email">Email Address *</label>
-					<input type="email" name="email"  placeholder="willy@wonka.com" required>
+						<input type="email" name="email" placeholder="willy@wonka.com" required>
 					</p>
 					<p>
-						<label for="number">Number Attending *</label>
-						<input type="number" name="number" required>
+						<label for="attending">Attending?</label>
+						<span class="sub_label">Yes </span><input type="radio" name="attending" value="yes" checked="checked">
+						<span class="sub_label">No </span><input type="radio" name="attending" value="no">
 					</p>
 					<!--<p>Dietary Restrictions
 						<label class="checklist" for="none">None <input type="checkbox" name="none" checked="checked"></label>
@@ -225,12 +226,13 @@
 					</p>-->
 					<p>
 						<label for="diet">Dietary Restrictions</label>
-						<span class="sub_label">None </span><input type="radio" name="diet" value="none">
-						<span class="sub_label">Vegetarian </span><input type="radio" name="diet" value="vegetarian">
-						<span class="sub_label">Vegan </span><input type="radio" name="diet" value="vegan">
-						<span class="sub_label">Gluten-Free </span><input type="radio" name="diet" value="gluten-free">
-						<span class="sub_label">All of the above </span><input type="radio" name="diet" value="all">
-						<span class="sub_label">Other (specify in message box) </span><input type="radio" name="diet" value="other">
+						<input type="diet" name="diet" placeholder="Vegetarian, Vegan, Gluten-Free, Allergies, etc." list=>
+						<datalist id="diet_list">
+							<option value="None">
+							<option value="Vegetarian">
+							<option value="Vegan">
+							<option value="Gluten-Free">
+						</datalist>
 					</p>
 					<p>
 						<label for="message">Message</label>

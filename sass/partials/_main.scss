@@ -499,6 +499,7 @@ footer {
 
     p {
         @include rem-calc(padding, 1.5, 0);
+		@include rem-calc(font-size, 1.2);
         margin: 0;
         background: $blue;
         color: $peach;
