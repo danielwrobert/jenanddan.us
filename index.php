@@ -213,7 +213,7 @@
 						<input type="email" name="email" placeholder="willy@wonka.com" required>
 					</p>
 					<p>
-						<label for="attending">Attending?</label>
+						<label for="attending">Attending? *</label>
 						<span class="sub_label">Yes </span><input type="radio" name="attending" value="yes" checked="checked">
 						<span class="sub_label">No </span><input type="radio" name="attending" value="no">
 					</p>
