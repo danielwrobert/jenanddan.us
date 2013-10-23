@@ -202,7 +202,7 @@
 			<div class="tiny_hearts"><img src="img/tiny_hearts.svg" alt="Tiny Hearts"></div>
             <div class="content">
 				<h3>Join Us!</h3>
-				<p>Please RSVP via the form below. <em>(* Required Fields)</em></p>
+				<p>Please RSVP via the form below. If you are afraid, you can also email us at <a href="mailto:rsvp@danandjen.us">rsvp@danandjen.us</a>. We hope to see you there! <em>(* Required Fields)</em></p>
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 					<p>
 						<label for="name">Name *</label>
@@ -217,13 +217,6 @@
 						<span class="sub_label">Yes </span><input type="radio" name="attending" value="yes" checked="checked">
 						<span class="sub_label">No </span><input type="radio" name="attending" value="no">
 					</p>
-					<!--<p>Dietary Restrictions
-						<label class="checklist" for="none">None <input type="checkbox" name="none" checked="checked"></label>
-						<label class="checklist" for="vegetarian">Vegetarian <input type="checkbox" name="vegetarian"></label>
-						<label class="checklist" for="vegan">Vegan <input type="checkbox" name="vegan"></label>
-						<label class="checklist" for="gluten-free">Gluten-Free <input type="checkbox" name="gluten-free"></label>
-						<label class="checklist" for="vegan">Vegan <input type="checkbox" name="vegan"></label>
-					</p>-->
 					<p>
 						<label for="diet">Dietary Restrictions</label>
 						<input type="diet" name="diet" placeholder="Vegetarian, Vegan, Gluten-Free, Allergies, etc." list=>
