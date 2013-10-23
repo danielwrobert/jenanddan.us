@@ -447,6 +447,8 @@ h4, h5, h6 {
 		}
 	}
 
+	.sub_label { @include rem-calc(padding-left, 1.5); }
+
 	input {
 		@include rem-calc(padding, 1.2);
 		width: 100%;
@@ -459,6 +461,9 @@ h4, h5, h6 {
 			background-color: $blue;
 			color: $peach;
 			text-transform: uppercase;
+		}
+		&[type="radio"] {
+			@include rem-calc(margin, 0, 0, 1.5, 1.5);
 		}
 	}
 

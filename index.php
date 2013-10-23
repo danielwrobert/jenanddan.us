@@ -206,26 +206,34 @@
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 					<p>
 						<label for="name">Name *</label>
-						<input type="text" name="name" value="<?php echo $_POST['name']; ?>" placeholder="Willy Wonka" required>
+						<input type="text" name="name" placeholder="Willy Wonka" required>
 					</p>
 					<p>
 						<label for="email">Email Address *</label>
-					<input type="email" name="email" value="<?php echo $_POST['email']; ?>" placeholder="willywonka@thechocolatefactory.com" required>
+					<input type="email" name="email"  placeholder="willy@wonka.com" required>
 					</p>
 					<p>
 						<label for="number">Number Attending *</label>
-						<input type="number" name="number" value="<?php echo htmlspecialchars('number'); ?>" required>
+						<input type="number" name="number" required>
 					</p>
-					<p>Dietary Restrictions
-						<label class="checklist" for="none">None <input type="checkbox" name="none" value="<?php echo htmlspecialchars('none'); ?>" checked="checked"></label>
-						<label class="checklist" for="vegetarian">Vegetarian <input type="checkbox" name="vegetarian" value="<?php echo htmlspecialchars('vegetarian'); ?>"></label>
-						<label class="checklist" for="vegan">Vegan <input type="checkbox" name="vegan" value="<?php echo htmlspecialchars('vegan'); ?>"></label>
-						<label class="checklist" for="gluten-free">Gluten-Free <input type="checkbox" name="gluten-free" value="<?php echo htmlspecialchars('gluten-free'); ?>"></label>
-						<label class="checklist" for="vegan">Vegan <input type="checkbox" name="vegan" value="<?php echo htmlspecialchars('vegan'); ?>" ></label>
+					<!--<p>Dietary Restrictions
+						<label class="checklist" for="none">None <input type="checkbox" name="none" checked="checked"></label>
+						<label class="checklist" for="vegetarian">Vegetarian <input type="checkbox" name="vegetarian"></label>
+						<label class="checklist" for="vegan">Vegan <input type="checkbox" name="vegan"></label>
+						<label class="checklist" for="gluten-free">Gluten-Free <input type="checkbox" name="gluten-free"></label>
+						<label class="checklist" for="vegan">Vegan <input type="checkbox" name="vegan"></label>
+					</p>-->
+					<p>
+						<label for="diet">Dietary Restrictions</label>
+						<span class="sub_label">None </span><input type="radio" name="diet" value="none">
+						<span class="sub_label">Vegetarian </span><input type="radio" name="diet" value="vegetarian">
+						<span class="sub_label">Vegan </span><input type="radio" name="diet" value="vegan">
+						<span class="sub_label">Gluten-Free </span><input type="radio" name="diet" value="gluten-free">
+						<span class="sub_label">Other (specify in message box) </span><input type="radio" name="diet" value="other">
 					</p>
 					<p>
 						<label for="message">Message</label>
-						<textarea name="message"><?php echo htmlspecialchars('message'); ?></textarea>
+						<textarea name="message"></textarea>
 					</p>
 					<p>
 						<input type="submit">
@@ -235,4 +243,4 @@
 			<div class="section_breaker">&nbsp;</div>
         </section>
 
-<?php include('header.php'); ?>
+<?php include('footer.php'); ?>
