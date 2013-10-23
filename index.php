@@ -229,6 +229,7 @@
 						<span class="sub_label">Vegetarian </span><input type="radio" name="diet" value="vegetarian">
 						<span class="sub_label">Vegan </span><input type="radio" name="diet" value="vegan">
 						<span class="sub_label">Gluten-Free </span><input type="radio" name="diet" value="gluten-free">
+						<span class="sub_label">All of the above </span><input type="radio" name="diet" value="all">
 						<span class="sub_label">Other (specify in message box) </span><input type="radio" name="diet" value="other">
 					</p>
 					<p>
