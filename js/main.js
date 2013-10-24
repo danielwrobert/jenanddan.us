@@ -81,6 +81,8 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
             });
 		},
 		formValidation: function(theForm) {
+			// TO-DO: Possibly change check to on blur and set abort value
+			//		On submit, then check abort value and return true/false.
 			$(theForm).on("submit", function() {
 				var abort = false;
 				
