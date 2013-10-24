@@ -42,45 +42,75 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 	var navUL = "#nav_list";
 	
 	var lovers = {
-		init : function() {
+		init: function() {
 			if (!Modernizr.svg) {
-				$('img[src$=".svg"]').each(function() {
-					$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
+				$("img[src$='.svg']").each(function() {
+					$(this).attr("src", $(this).attr("src").replace(".svg", ".png"));
 				});
 			}
 			lovers.pageNav(navUL);
 		},
-        addMenuBtn : function(siblingList) {
+        addMenuBtn: function(siblingList) {
             $("<a>", {
-                class : "menu",
-                href : "#",
-                text : "MENU",
-                click : function() {
+                class: "menu",
+                href: "#",
+                text: "MENU",
+                click: function() {
                     $(this).next().slideToggle(200);
                     return false;
                 }
             }).insertBefore(siblingList);
         },
-        pageNav : function(navList) {
+        pageNav: function(navList) {
             var $navLinks = $(navList+" a");
 
             // Generate menu button is page is rendered below 760px width
-            if (matchMedia('screen and (max-width: 47.5em)').matches) {
+            if (matchMedia("screen and (max-width: 47.5em)").matches) {
                 this.addMenuBtn(navList);
             }
             //When nav button is clicked, scroll page to target section
             $navLinks.on("click", function() {
                 var target = $(this).attr("href");
-				if(target === "#home") {
-					console.log("HOME, THE ENGLISH ARE TOO MINNIE!");
-					$("html, body").animate({ scrollTop : 0 }, 1000);
+				if (target === "#home") {
+					$("html, body").animate({ scrollTop: 0 }, 1000);
 				} else {
-					$("html, body").animate({ scrollTop : $(target).offset().top }, 1000);
+					$("html, body").animate({ scrollTop: $(target).offset().top }, 1000);
 				}
                 $(".menu").trigger("click");
                 return false;
             });
+		},
+		formValidation: function(theForm) {
+			$(theForm).on("submit", function() {
+				var abort = false;
+				
+				$('.error').remove();
+				$("input[required]").each(function() {
+					var $this = $(this),
+						attrType = $this.attr("type"),
+						attrPattern = $this.attr("pattern"),
+						isValid = $this.val().search(attrPattern) >= 0;
+					
+					if ($this.val() === "") {
+						$this.after("<div class='error'>This is a required field.</div>");
+						abort = true;
+					}
+					if ((attrType === "code") && !isValid) {
+						$this.after("<div class='error'>Please enter a valid "+ attrType +".</div>");
+						abort = true;
+					}
+				}); // Loop through required fields
+
+				if (abort) { return false; } else { return true; }
+			});
 		}
 	};
-	lovers.init();
+
+	// On Document Ready
+	$(function() {
+		var mainForm = ".rsvp_form";
+
+		lovers.init();
+		lovers.formValidation(mainForm);
+	});
 })(jQuery);

@@ -463,7 +463,8 @@ h4, h5, h6 {
 			text-transform: uppercase;
 		}
 		&[type="radio"] {
-			@include rem-calc(margin, 0, 0, 1.5, 1.5);
+			@include rem-calc(margin, 0, 0, 1.5, 0.5);
+			width: auto;
 		}
 	}
 

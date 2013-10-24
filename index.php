@@ -203,7 +203,7 @@
             <div class="content">
 				<h3>Join Us!</h3>
 				<p>Please RSVP via the form below. If you are afraid, you can also email us at <a href="mailto:rsvp@danandjen.us">rsvp@danandjen.us</a>. We hope to see you there! <em>(* Required Fields)</em></p>
-				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+				<form class="rsvp_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 					<p>
 						<label for="name">Name *</label>
 						<input type="text" name="name" placeholder="Willy Wonka" required>
@@ -211,6 +211,10 @@
 					<p>
 						<label for="email">Email Address *</label>
 						<input type="email" name="email" placeholder="willy@wonka.com" required>
+					</p>
+					<p>
+						<label for="code">Entry Code *</label>
+						<input type="code" name="code" pattern="13730" required>
 					</p>
 					<p>
 						<label for="attending">Attending? *</label>
