@@ -214,7 +214,7 @@
 					</p>
 					<p>
 						<label for="code">Entry Code *</label>
-						<input type="code" name="code" pattern="13730" required>
+						<input type="code" name="code" required>
 					</p>
 					<p>
 						<label for="attending">Attending? *</label>
