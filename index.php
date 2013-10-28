@@ -1,8 +1,6 @@
 <?php
-	//session_start();
-	
-	//error checking
-	if (!empty($_POST)) {
+	// Server-Side Error Checking
+	if (($_SERVER['REQUEST_METHOD'] == 'POST') && (!empty($_POST['action']))) {
 	
 		$error = array();
 	
@@ -48,8 +46,6 @@
 				header('location:contact-confirm.php');
 		}
 	}
-	
-	//exit;
 	
 	include('header.php');
 ?>
@@ -175,7 +171,7 @@
             <div class="content">
 				<h3>Join Us!</h3>
 				<p>Please RSVP via the form below. If you are afraid, you can also email us at <a href="mailto:rsvp@danandjen.us">rsvp@danandjen.us</a>. We hope to see you there! <em>(* Required Fields)</em></p>
-				<form class="rsvp_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+				<form class="rsvp_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
 					<p>
 						<label for="name">Name *</label>
 						<input type="text" name="name" placeholder="Willy Wonka" required>
@@ -208,7 +204,8 @@
 						<textarea name="message"></textarea>
 					</p>
 					<p>
-						<input type="submit">
+						<!-- <input type="submit" name="action" value="submit"> -->
+						<button type="submit" name="action" value="submit">submit</button>
 					</p>
 				</form>
             </div>

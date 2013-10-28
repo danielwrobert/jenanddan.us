@@ -84,8 +84,7 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 			$(theForm + " input[required]").on("blur", function() {
 				var $this = $(this),
 					abort = false,
-					attrType = $this.attr("type"),
-					isValid = $this.val();
+					attrType = $this.attr("type");
 				
 				$this.siblings('.error').remove();
 				if ($this.val() === "") {

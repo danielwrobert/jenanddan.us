@@ -468,6 +468,14 @@ h4, h5, h6 {
 		}
 	}
 
+	button {
+		&[type="submit"] {
+			@extend input[type="submit"];
+			border: none;
+			border-radius: 5px;
+		}
+	}
+
 	textarea {
 		@extend input;
 		resize: none;
