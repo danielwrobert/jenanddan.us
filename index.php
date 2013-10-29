@@ -2,49 +2,29 @@
 	// Server-Side Error Checking
 	if (($_SERVER['REQUEST_METHOD'] == 'POST') && (!empty($_POST['action']))) {
 	
-		$error = array();
-	
-		//First Name
-		if (empty($_POST['name'])) {
-			$error['name'] = 'Please enter your name.';
-		}
-		else if (strlen($_POST['name']) > 50) {
-			$error['name'] = 'Name input must be less than 50 characters.';
-		}
-	
-		//Email
-		if (empty($_POST['email'])) {
-			$error['email'] = 'Please enter a valid email address.';
-		}
-		else if (strlen($_POST['email']) < 5) {
-			$error['email'] = 'Your email is too short (5 min).';
-		}
-		else if (strlen($_POST['email']) > 100) {
-			$error['email'] = 'Your email is too long (100 max).';
-		}
-	
-		//NUMBER
-		if ((empty($_POST['number'])) || (strlen($_POST['number']) < 0)) {
-			$error['number'] = 'Please enter a valid head count.';
-		}
-	
-		//Send email message after complete form submitted
-		if (empty($error)){
-				$to_email = 'rsvp@danandjen.us';
-				$subject = 'RSVP from:'.$_POST['name']."\r\n";
-				$body = 'Name: '.$_POST['name']."\r\n";
-				$body .= 'Email: '.$_POST['email']."\r\n";
-				$body .= 'Number Attending: '.$_POST['number']."\r\n";
-				$body .= 'Message: '.$_POST['message']."\r\n";
-	
-				$headers = 'From: rsvp@danandjen.us' . "\r\n" .
-						    'Reply-To: rsvp@danandjen.us' . "\r\n" .
-						    'X-Mailer: PHP/' . phpversion();
-	
-				mail($to_email, $subject, $body, $headers);
-	
-				header('location:contact-confirm.php');
-		}
+		$myname = $_REQUEST['myname'];
+		$mypassword = $_REQUEST['mypassword'];
+		$mypasswordconf = $_REQUEST['mypasswordconf'];
+
+
+		if ($myname === '') {
+			$err_myname = '<div class="error">Sorry, your name is a required field</div>';
+		} // input field empty
+
+
+		if (strlen($mypassword) <= 6) {
+			$err_passlength = '<div class="error">Sorry, the password must be at least six characters</div>';
+		} //password not long enough
+
+
+		if ($mypassword !== $mypasswordconf) {
+			$err_mypassconf = '<div class="error">Sorry, passwords must match</div>';
+		} //passwords don't match
+
+
+		if ( !(preg_match('/[A-Za-z]+, [A-Za-z]+/', $myname)) ) {
+			$err_patternmatch = '<div class="error">Sorry, the name must be in the format: Last, First</div>';
+		} // pattern doesn't match
 	}
 	
 	include('header.php');
@@ -175,14 +155,17 @@
 					<p>
 						<label for="name">Name *</label>
 						<input type="text" name="name" placeholder="Willy Wonka" required>
+						<?php if (isset($err_myname)) { echo $err_myname; } ?>
 					</p>
 					<p>
 						<label for="email">Email Address *</label>
 						<input type="email" name="email" placeholder="willy@wonka.com" required>
+						<?php if (isset($err_myname)) { echo $err_myname; } ?>
 					</p>
 					<p>
 						<label for="code">Entry Code *</label>
 						<input type="code" name="code" required>
+						<?php if (isset($err_myname)) { echo $err_myname; } ?>
 					</p>
 					<p>
 						<label for="attending">Attending? *</label>
