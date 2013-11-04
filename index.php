@@ -155,7 +155,6 @@
             <div class="content">
 				<h3>Join Us!</h3>
 				<p>Please RSVP via the form below. You can also email us at <a href="mailto:rsvp@danandjen.us">rsvp@danandjen.us</a>. We hope to see you there! <em>(* Required Fields)</em></p>
-				<p><?php echo date("F jS, Y"); ?></p>
 				<form class="rsvp_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>#rsvp" method="POST">
 					<p>
 						<label for="name">Name *</label>
