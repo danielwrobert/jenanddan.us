@@ -343,6 +343,11 @@ h4, h5, h6 {
 	@include flexible-videos();
 }
 
+.thankyou {
+	@include rem-calc(padding, 2.5, 0);	
+	text-align: center;
+}
+
 
 /*
  *  Our Story
@@ -442,6 +447,8 @@ h4, h5, h6 {
 		}
 	}
 
+	.sub_label { @include rem-calc(padding-left, 1.5); }
+
 	input {
 		@include rem-calc(padding, 1.2);
 		width: 100%;
@@ -454,6 +461,18 @@ h4, h5, h6 {
 			background-color: $blue;
 			color: $peach;
 			text-transform: uppercase;
+		}
+		&[type="radio"] {
+			@include rem-calc(margin, 0, 0, 1.5, 0.5);
+			width: auto;
+		}
+	}
+
+	button {
+		&[type="submit"] {
+			@extend input[type="submit"];
+			border: none;
+			border-radius: 5px;
 		}
 	}
 
@@ -470,6 +489,8 @@ h4, h5, h6 {
 			width: 50%;
 		}
 	}
+
+	.error { color: #9d1300; }
 }
 
 
@@ -489,6 +510,7 @@ footer {
 
     p {
         @include rem-calc(padding, 1.5, 0);
+		@include rem-calc(font-size, 1.2);
         margin: 0;
         background: $blue;
         color: $peach;
