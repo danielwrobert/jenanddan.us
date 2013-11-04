@@ -7,7 +7,7 @@
 //		$mypasswordconf = $_REQUEST['mypasswordconf'];
 		$event_date = date("F jS, Y");
 
-		if ($event_date >= "November 3rd, 2013") {
+		if ($event_date >= "November 4th, 2013") {
 			$err_closed = '<div class="error">Thank you for your interest. Unfortuantely, the guest list is now closed. Check back for more event photos!</div>';
 		}
 
@@ -154,9 +154,9 @@
 			<div class="tiny_hearts"><img src="img/tiny_hearts.svg" alt="Tiny Hearts"></div>
             <div class="content">
 				<h3>Join Us!</h3>
-				<p>Please RSVP via the form below. If you are afraid, you can also email us at <a href="mailto:rsvp@danandjen.us">rsvp@danandjen.us</a>. We hope to see you there! <em>(* Required Fields)</em></p>
+				<p>Please RSVP via the form below. You can also email us at <a href="mailto:rsvp@danandjen.us">rsvp@danandjen.us</a>. We hope to see you there! <em>(* Required Fields)</em></p>
 				<p><?php echo date("F jS, Y"); ?></p>
-				<form class="rsvp_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
+				<form class="rsvp_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>#rsvp" method="POST">
 					<p>
 						<label for="name">Name *</label>
 						<input type="text" name="name" placeholder="Willy Wonka" required>
