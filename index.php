@@ -1,14 +1,4 @@
 <?php
-	// Server-Side Error Checking
-	if (($_SERVER['REQUEST_METHOD'] == 'POST') && (!empty($_POST['action']))) {
-	
-		$event_date = date("F jS, Y");
-
-		if ($event_date >= "November 4th, 2013") {
-			$err_closed = '<div class="error">Thank you for your interest. Unfortuantely, the guest list is now closed. Check back for more event photos!</div>';
-		}
-	}
-	
 	include('header.php');
 ?>
 
@@ -134,21 +124,18 @@
             <div class="content">
 				<h3>Join Us!</h3>
 				<p>Please RSVP via the form below. You can also email us at <a href="mailto:rsvp@danandjen.us">rsvp@danandjen.us</a>. We hope to see you there! <em>(* Required Fields)</em></p>
-				<form class="rsvp_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>#rsvp" method="POST">
+				<form class="rsvp_form" action="" method="POST">
 					<p>
 						<label for="name">Name *</label>
-						<input type="text" name="name" placeholder="Willy Wonka" required>
-						<?php if (isset($err_myname)) { echo $err_myname; } ?>
+						<input type="text" name="name" placeholder="Willy Wonka">
 					</p>
 					<p>
 						<label for="email">Email Address *</label>
-						<input type="email" name="email" placeholder="willy@wonka.com" required>
-						<?php if (isset($err_myname)) { echo $err_myname; } ?>
+						<input type="email" name="email" placeholder="willy@wonka.com">
 					</p>
 					<p>
 						<label for="code">Entry Code *</label>
-						<input type="code" name="code" required>
-						<?php if (isset($err_myname)) { echo $err_myname; } ?>
+						<input type="code" name="code">
 					</p>
 					<p>
 						<label for="attending">Attending? *</label>
@@ -172,7 +159,6 @@
 					<p>
 						<!-- <input type="submit" name="action" value="submit"> -->
 						<button type="submit" name="action" value="submit">submit</button>
-						<?php if (isset($err_closed)) { echo $err_closed; } ?>
 					</p>
 				</form>
             </div>

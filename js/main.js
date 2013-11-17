@@ -81,22 +81,30 @@ window.matchMedia = window.matchMedia || (function( doc, undefined ) {
             });
 		},
 		formValidation: function(theForm) {
-			$(theForm + " input[required]").on("blur", function() {
-				var $this = $(this),
-					abort = false,
-					attrType = $this.attr("type");
-				
-				$this.siblings('.error').remove();
-				if ($this.val() === "") {
-					$this.after("<div class='error'>This is a required field.</div>");
-					abort = true;
-				}
-				if ((attrType === "code") && ($this.val() !== "13730")) {
-					$this.after("<div class='error'>Please enter a valid "+ attrType +".</div>");
-					abort = true;
-				}
+//			$(theForm + " input[required]").on("blur", function() {
+//				var $this = $(this),
+//					abort = false,
+//					attrType = $this.attr("type");
+//				
+//				$this.siblings('.error').remove();
+//				if ($this.val() === "") {
+//					$this.after("<div class='error'>This is a required field.</div>");
+//					abort = true;
+//				}
+//				if ((attrType === "code") && ($this.val() !== "13730")) {
+//					$this.after("<div class='error'>Please enter a valid "+ attrType +".</div>");
+//					abort = true;
+//				}
+//
+//				if (abort) { return false; } else { return true; }
+//			});
 
-				if (abort) { return false; } else { return true; }
+			$(theForm).on("submit", function() {
+				var message = "<div class='event_ended'><h3>Thank You For Your Interest!</h3>";
+				message += "<p>Unfortunately, this event is over. Please check back, as we will be posting photos shortly!</p></div>";
+				
+				$(this).parent().html(message);
+				return false;
 			});
 		}
 	};
