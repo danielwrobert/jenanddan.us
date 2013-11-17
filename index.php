@@ -1,36 +1,4 @@
 <?php
-	// Server-Side Error Checking
-	if (($_SERVER['REQUEST_METHOD'] == 'POST') && (!empty($_POST['action']))) {
-	
-//		$myname = $_REQUEST['myname'];
-//		$mypassword = $_REQUEST['mypassword'];
-//		$mypasswordconf = $_REQUEST['mypasswordconf'];
-		$event_date = date("F jS, Y");
-
-		if ($event_date >= "November 4th, 2013") {
-			$err_closed = '<div class="error">Thank you for your interest. Unfortuantely, the guest list is now closed. Check back for more event photos!</div>';
-		}
-
-//		if ($myname === '') {
-//			$err_myname = '<div class="error">Sorry, your name is a required field</div>';
-//		} // input field empty
-//
-//
-//		if (strlen($mypassword) <= 6) {
-//			$err_passlength = '<div class="error">Sorry, the password must be at least six characters</div>';
-//		} //password not long enough
-//
-//
-//		if ($mypassword !== $mypasswordconf) {
-//			$err_mypassconf = '<div class="error">Sorry, passwords must match</div>';
-//		} //passwords don't match
-//
-//
-//		if ( !(preg_match('/[A-Za-z]+, [A-Za-z]+/', $myname)) ) {
-//			$err_patternmatch = '<div class="error">Sorry, the name must be in the format: Last, First</div>';
-//		} // pattern doesn't match
-	}
-	
 	include('header.php');
 ?>
 
@@ -155,21 +123,18 @@
             <div class="content">
 				<h3>Join Us!</h3>
 				<p>Please RSVP via the form below. You can also email us at <a href="mailto:rsvp@danandjen.us">rsvp@danandjen.us</a>. We hope to see you there! <em>(* Required Fields)</em></p>
-				<form class="rsvp_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>#rsvp" method="POST">
+				<form class="rsvp_form" action="" method="POST">
 					<p>
 						<label for="name">Name *</label>
-						<input type="text" name="name" placeholder="Willy Wonka" required>
-						<?php if (isset($err_myname)) { echo $err_myname; } ?>
+						<input type="text" name="name" placeholder="Willy Wonka">
 					</p>
 					<p>
 						<label for="email">Email Address *</label>
-						<input type="email" name="email" placeholder="willy@wonka.com" required>
-						<?php if (isset($err_myname)) { echo $err_myname; } ?>
+						<input type="email" name="email" placeholder="willy@wonka.com">
 					</p>
 					<p>
 						<label for="code">Entry Code *</label>
-						<input type="code" name="code" required>
-						<?php if (isset($err_myname)) { echo $err_myname; } ?>
+						<input type="code" name="code">
 					</p>
 					<p>
 						<label for="attending">Attending? *</label>
@@ -193,7 +158,6 @@
 					<p>
 						<!-- <input type="submit" name="action" value="submit"> -->
 						<button type="submit" name="action" value="submit">submit</button>
-						<?php if (isset($err_closed)) { echo $err_closed; } ?>
 					</p>
 				</form>
             </div>
