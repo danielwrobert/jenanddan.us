@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Font Styles
+   ========================================================================== */
+
+@font-face {
+    font-family: 'kg_eyes_wide_openregular';
+    src: url('fonts/kgeyeswideopen-webfont.eot');
+    src: url('fonts/kgeyeswideopen-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/kgeyeswideopen-webfont.woff') format('woff'),
+         url('fonts/kgeyeswideopen-webfont.ttf') format('truetype'),
+         url('fonts/kgeyeswideopen-webfont.svg#kg_eyes_wide_openregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'brain_flowerregular';
+    src: url('brain_flower_euro-webfont.eot');
+    src: url('fonts/brain_flower_euro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/brain_flower_euro-webfont.woff') format('woff'),
+         url('fonts/brain_flower_euro-webfont.ttf') format('truetype'),
+         url('fonts/brain_flower_euro-webfont.svg#brain_flowerregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
