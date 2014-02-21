@@ -1,0 +1,25 @@
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+//========== COMPASS IMPORTS ========== 
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/layout";
+@import "compass/typography";
+
+
+//========== SPRITES ========== 
+// @import "sprites/*.png";
+
+
+//========== PROJECT MODULES ========== 
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/normalize";
+@import "partials/fonts";
+@import "partials/grid";
+@import "partials/navigation";
+@import "partials/main";
+@import "partials/helpers";
+@import "partials/print";

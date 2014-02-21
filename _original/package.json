@@ -1,0 +1,22 @@
+{
+  "name": "Dan-And-Jen",
+  "version": "0.0.0",
+  "description": "The wedding website for Dan and Jen",
+  "homepage": "http://danandjen.us",
+  "author": {
+    "name": "Daniel W. Robert & Jennifer Avery",
+    "url": "http://cupofvoodoo.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.org/danielwrobert/dan-and-jen.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-compass": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-contrib-jshint": "~0.6.2",
+    "grunt-contrib-imagemin": "~0.1.4"
+  }
+}
