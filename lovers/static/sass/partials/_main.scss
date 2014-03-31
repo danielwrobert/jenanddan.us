@@ -112,7 +112,7 @@ h4, h5, h6 {
         // background: $blue;
         border-radius: 225px;
     }
- 
+
     .logo {
         @include rem-calc(font-size, 9.5);
         // @include rem-calc(letter-spacing, 1);
@@ -122,7 +122,7 @@ h4, h5, h6 {
         font-family: $script_font;
         font-weight: normal;
         text-align: center;
-    
+
         span {
             @include rem-calc(font-size, 6.5);
             @include rem-calc(padding, 0, 1.5, 0, 0.5);
@@ -173,7 +173,7 @@ h4, h5, h6 {
     @include rem-calc(max-width, 102.4);
     width: 92%;
     margin: auto;
-  
+
     @include breakpoint(1080px) {
         width: 100%;
     }
@@ -218,7 +218,7 @@ h4, h5, h6 {
 				color: $blue;
 				font-weight: bold;
 			}
-			
+
 		}
     }
 
@@ -243,21 +243,21 @@ h4, h5, h6 {
 		//top: 0;
 		//left: 0;
 
-		#location & {
-			@include rem-calc(margin-bottom, 1.5);
-		}
-
-		#info & {
-			@include rem-calc(margin-bottom, 1.6);
-
-			@include breakpoint(medium) {
-				margin-bottom: 0;
-			}
-		}
-
        @include breakpoint(small) {
            @include rem-calc(height, 30);
        }
+    }
+
+    #location & {
+        @include rem-calc(margin-bottom, 1.5);
+    }
+
+    #info & {
+        @include rem-calc(margin-bottom, 1.6);
+
+        @include breakpoint(medium) {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -278,7 +278,7 @@ h4, h5, h6 {
 }
 
 .center_align {
-	text-align: center;		
+	text-align: center;
 }
 
 .footnote {
@@ -291,7 +291,7 @@ h4, h5, h6 {
     background: transparent image-url("lovers_stare.jpg") center top no-repeat;
     background-size: auto 37.5em;
     color: #FFF;
-    
+
     h2 {
         padding: 0 2%;
         @include rem-calc(padding-top, 20);
@@ -344,7 +344,7 @@ h4, h5, h6 {
 }
 
 .thankyou {
-	@include rem-calc(padding, 2.5, 0);	
+	@include rem-calc(padding, 2.5, 0);
 	text-align: center;
 }
 
@@ -387,7 +387,7 @@ h4, h5, h6 {
 
 
 /*
- *  Registry 
+ *  Registry
  **/
 #registry {
 	img {
@@ -503,7 +503,7 @@ footer {
     @include rem-calc(padding-top, 4.5);
     background: transparent image-url("bg_skyline_small.png") center top no-repeat;
     text-align: center;
-  
+
     @include breakpoint(small) {
         @include rem-calc(padding-top, 9.5);
         background-image: image-url("bg_skyline.png");
