@@ -37,3 +37,14 @@ publish
 # build script local files
 build/buildinfo.properties
 build/config/buildinfo.properties
+
+# Python files
+*.pyc
+
+# Gulp Files
+gulpfile.js
+package.json
+node_modules/
+
+# Database Files
+*.sqlite3
