@@ -3,7 +3,9 @@
 		<header>
 			<navigation />
 		</header>
-		<router-view/>
+		<keep-alive>
+			<router-view/>
+		</keep-alive>
 		<footer>
 			<p>&copy; 2014 Daniel W. Robert. All Rights Reserved.</p>
 		</footer>

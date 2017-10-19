@@ -1,5 +1,5 @@
 <template>
-	<div class="our-story">
+	<div class="wedding-details">
 		<div class="banner" v-if="banner" :style="{ 'background-image': 'url(' + banner.guid.rendered + ')' }">
 			<div class="banner-text">
 				<h2>{{ name }}</h2>
@@ -15,7 +15,7 @@ import axios from 'axios';
 export default {
 	data() {
 		return {
-			name: 'Our Story',
+			name: 'Wedding Details',
 			banner: '',
 			content: [],
 			errors: []
@@ -27,8 +27,8 @@ export default {
 	methods: {
 		fetchData() {
 			axios.all( [
-				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/pages/14' ),
-				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media/23' ),
+				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/pages/17' ),
+				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media/19' ),
 			] )
 			.then( axios.spread( ( content, banner ) => {
 				this.banner = banner.data;
@@ -64,3 +64,4 @@ export default {
 		}
 	}
 </style>
+

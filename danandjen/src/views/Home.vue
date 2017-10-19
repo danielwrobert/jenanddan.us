@@ -27,13 +27,6 @@ export default {
 	},
 	methods: {
 		fetchData() {
-			// axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/pages/3' )
-			// 	.then( response => {
-			// 		this.content = response.data;
-			// 	} )
-			// 	.catch( e => {
-			// 		this.errros.push( e );
-			// 	} );
 			axios.all( [
 				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/pages/3' ),
 				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media/4' ),
