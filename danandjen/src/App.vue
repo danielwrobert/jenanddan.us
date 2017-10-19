@@ -1,23 +1,44 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+	<div id="app">
+		<header>
+			<navigation />
+		</header>
+		<router-view/>
+		<footer>
+			<p>&copy; 2014 Daniel W. Robert. All Rights Reserved.</p>
+		</footer>
+	</div>
 </template>
 
 <script>
+import Navigation from '@/components/Navigation.vue'
+
 export default {
-  name: 'app'
+	name: 'app',
+	components: {
+		navigation: Navigation
+	}
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+	footer {
+		// background: transparent image-url("bg_skyline_small.png") center top no-repeat;
+		margin-top: 2.5rem;
+		padding-top: 2.5rem;
+		text-align: center;
+
+		@include breakpoint(small) {
+			padding-top: 9.5rem;
+			// background-image: image-url("bg_skyline.png");
+		}
+
+		p {
+			background: $blue;
+			color: $peach;
+			font-size: 1.2rem;
+			margin: 0;
+			padding: 1.5rem 0;
+		}
+	}
 </style>
