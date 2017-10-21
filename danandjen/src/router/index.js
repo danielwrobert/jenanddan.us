@@ -4,7 +4,7 @@ import Router from 'vue-router';
 import Home from '@/views/Home';
 import Story from '@/views/Story';
 import Details from '@/views/Details';
-import Photos from '@/views/Photos';
+import Gallery from '@/views/Gallery';
 
 Vue.use( Router );
 
@@ -16,19 +16,19 @@ export default new Router( {
 			component: Home,
 		},
 		{
-			path: '/our-story',
+			path: '/story',
 			name: 'story',
 			component: Story,
 		},
 		{
-			path: '/wedding-details',
+			path: '/details',
 			name: 'details',
 			component: Details,
 		},
 		{
-			path: '/photos',
-			name: 'photos',
-			component: Photos,
+			path: '/gallery',
+			name: 'gallery',
+			component: Gallery,
 		},
 	],
 } );

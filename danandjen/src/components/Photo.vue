@@ -1,15 +1,32 @@
 <template>
-    <figure class="gallery-item" v-for="photo in photos" :key="photo.id">
-        <a :href="photo.media_details.sizes.full.source_url" @click.prevent="toggleModal( photo )">
-            <img :src="photo.media_details.sizes.thumbnail.source_url" :alt="photo.slug">
+    <figure class="gallery-item">
+        <a :href="full" @click.prevent="toggleModal">
+            <img :src="thumbnail" :alt="slug" />
         </a>
-        <p v-show="modalIsVisible">Toggle message</p>
+        <div class="modal" v-show="modalIsVisible">
+            <div class="modal-background" @click="toggleModal"></div>
+            <button class="modal-close" aria-label="close" @click="toggleModal">X</button>
+            <div class="modal-content">
+                <img :src="full" :alt="slug" />
+            </div>
+        </div>
     </figure>
 </template>
 
 <script>
     export default {
-        
+        name: 'photo',
+        props: [ 'thumbnail', 'full', 'slug' ],
+        data() {
+            return {
+                modalIsVisible: false
+            }
+        },
+        methods: {
+            toggleModal() {
+                this.modalIsVisible = ! this.modalIsVisible;
+            }
+        },
     }
 </script>
 

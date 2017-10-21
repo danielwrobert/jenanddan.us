@@ -1,24 +1,29 @@
 <template>
-	<div class="wedding-details">
+	<div class="photos">
 		<div class="banner" v-if="banner" :style="{ 'background-image': 'url(' + banner.guid.rendered + ')' }">
 			<div class="banner-text">
-				<h2>Wedding Details</h2>
+				<h2>Photos</h2>
 			</div>
 		</div>
-		<div class="content-container" v-if="content" v-html="content.content.rendered"></div>
+		<div class="content-container">
+			<photo-grid />
+        </div>
 	</div>
 </template>
 
 <script>
 import axios from 'axios';
+import PhotoGrid from '@/components/PhotoGrid';
 
 export default {
-	name: 'details',
+	name: 'gallery',
+	components: {
+		photoGrid: PhotoGrid
+	},
 	data() {
 		return {
 			banner: '',
-			content: [],
-			errors: []
+			errors: [],
 		}
 	},
 	created() {
@@ -26,18 +31,14 @@ export default {
 	},
 	methods: {
 		fetchData() {
-			axios.all( [
-				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/pages/17' ),
-				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media/19' ),
-			] )
-			.then( axios.spread( ( content, banner ) => {
-				this.banner = banner.data;
-				this.content = content.data;
-			} ) )
+			axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media/20' )
+			.then( response => {
+				this.banner = response.data;
+			} )
 			.catch( e => {
 				this.errors.push( e );
 			} );
-		}
+		},
 	},
 }
 </script>
@@ -60,8 +61,16 @@ export default {
 
 		h2 {
 			font-size: 5rem;
-			text-shadow: 1px 1px 1px rgba(0,0,0,0.7)
+			text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
 		}
-	}
+    }
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 0.5rem;
+    }
+    figure.gallery-item {
+        margin: 0;
+    }
 </style>
 

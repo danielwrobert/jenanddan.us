@@ -4,14 +4,14 @@
 			<router-link tag="li" to="/" exact>
 				<a>Home</a>
 			</router-link>
-			<router-link tag="li" to="/our-story">
+			<router-link tag="li" to="/story">
 				<a>Our Story</a>
 			</router-link>
-			<router-link tag="li" to="/wedding-details">
+			<router-link tag="li" to="/details">
 				<a>Wedding Details</a>
 			</router-link>
-			<router-link tag="li" to="/photos">
-				<a>Photos</a>
+			<router-link tag="li" to="/gallery">
+				<a>Photo Gallery</a>
 			</router-link>
 		</ul>
 	</nav>
@@ -19,15 +19,15 @@
 
 <script>
 export default {
-	name: 'MainNav',
+	name: 'navigation',
 	// Not really used at the moment:
 	data() {
 		return {
 			links: [
 				{ title: 'Home', slug: '/' },
-				{ title: 'Our Story', slug: '/our-story' },
-				{ title: 'Wedding Details', slug: '/wedding-details' },
-				{ title: 'Photos', slug: '/photos' }
+				{ title: 'Our Story', slug: '/story' },
+				{ title: 'Wedding Details', slug: '/details' },
+				{ title: 'Photo Gallery', slug: '/gallery' }
 			]
 		}
 	}

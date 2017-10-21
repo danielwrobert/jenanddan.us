@@ -2,7 +2,7 @@
 	<div class="our-story">
 		<div class="banner" v-if="banner" :style="{ 'background-image': 'url(' + banner.guid.rendered + ')' }">
 			<div class="banner-text">
-				<h2>{{ name }}</h2>
+				<h2>Our Story</h2>
 			</div>
 		</div>
 		<div class="content-container" v-if="content" v-html="content.content.rendered"></div>
@@ -13,9 +13,9 @@
 import axios from 'axios';
 
 export default {
+	name: 'story',
 	data() {
 		return {
-			name: 'Our Story',
 			banner: '',
 			content: [],
 			errors: []

@@ -14,9 +14,9 @@
 import axios from 'axios';
 
 export default {
+	name: 'home',
 	data() {
 		return {
-			name: 'Home',
 			banner: '',
 			content: [],
 			errors: []

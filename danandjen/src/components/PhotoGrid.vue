@@ -1,6 +1,12 @@
 <template>
     <div class="photo-grid">
-        <thumbnail v-for="photo in photos" :key="photo.id" />
+        <photo
+			v-for="item in gallery"
+			:key="item.id"
+			:thumbnail="item.media_details.sizes.thumbnail.source_url"
+			:full="item.media_details.sizes.full.source_url"
+			:slug="item.slug"
+		/>
     </div>
 </template>
 
@@ -9,17 +15,16 @@ import axios from 'axios';
 import Photo from '@/components/Photo.vue';
 
 export default {
+	name: 'photo-grid',
+	components: {
+		photo: Photo
+	},
 	data() {
 		return {
-			name: 'Photos',
 			banner: '',
-			photos: [],
+			gallery: [],
 			errors: [],
-			modalIsVisible: false
 		}
-	},
-	components: {
-		thumbnail: Photo
 	},
 	created() {
 		this.fetchData();
@@ -30,17 +35,14 @@ export default {
 				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=26' ),
 				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media/20' ),
 			] )
-			.then( axios.spread( ( photos, banner ) => {
-				this.photos = photos.data;
+			.then( axios.spread( ( gallery, banner ) => {
+				this.gallery = gallery.data;
 				this.banner = banner.data;
 			} ) )
 			.catch( e => {
 				this.errors.push( e );
 			} );
 		},
-		toggleModal( photo ) {
-			this.modalIsVisible = ! this.modalIsVisible;
-		}
 	},
 }
 </script>
