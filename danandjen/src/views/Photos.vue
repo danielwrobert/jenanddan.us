@@ -5,7 +5,17 @@
 				<h2>{{ name }}</h2>
 			</div>
 		</div>
-		<div class="content-container" v-if="content" v-html="content.content.rendered"></div>
+		<div class="content-container" v-if="photos">
+			<!-- TODO: Need to break out photo grid into separate component so toggle can be tied to individulal photo in loop -->
+            <div class="photo-grid">
+                <figure class="gallery-item" v-for="photo in photos" :key="photo.id">
+					<a :href="photo.media_details.sizes.full.source_url" @click.prevent="toggleModal( photo )">
+						<img :src="photo.media_details.sizes.thumbnail.source_url" :alt="photo.slug">
+					</a>
+					<p v-show="modalIsVisible">Toggle message</p>
+                </figure>
+            </div>
+        </div>
 	</div>
 </template>
 
@@ -17,8 +27,9 @@ export default {
 		return {
 			name: 'Photos',
 			banner: '',
-			content: [],
-			errors: []
+			photos: [],
+			errors: [],
+			modalIsVisible: false
 		}
 	},
 	created() {
@@ -27,22 +38,27 @@ export default {
 	methods: {
 		fetchData() {
 			axios.all( [
-				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/pages/26' ),
+				// axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/pages/26' ),
+				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=26' ),
 				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media/20' ),
 			] )
-			.then( axios.spread( ( content, banner ) => {
+			.then( axios.spread( ( photos, banner ) => {
+				this.photos = photos.data;
 				this.banner = banner.data;
-				this.content = content.data;
 			} ) )
 			.catch( e => {
 				this.errors.push( e );
 			} );
+		},
+		toggleModal( photo ) {
+			// console.log( e.target );
+			this.modalIsVisible = ! this.modalIsVisible;
 		}
 	},
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 	.banner {
 		align-items: center;
 		background-repeat: no-repeat;
@@ -60,8 +76,18 @@ export default {
 
 		h2 {
 			font-size: 5rem;
-			text-shadow: 1px 1px 1px rgba(0,0,0,0.7)
+			text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
 		}
-	}
+    }
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 0.5rem;
+    }
+    figure.gallery-item {
+        // display: inline-block;
+        // margin: 0.5rem;
+        margin: 0;
+    }
 </style>
 

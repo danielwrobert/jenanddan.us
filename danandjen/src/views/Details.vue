@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 	.banner {
 		align-items: center;
 		background-repeat: no-repeat;

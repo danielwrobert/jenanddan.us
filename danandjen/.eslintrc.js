@@ -49,6 +49,8 @@ module.exports = {
     // }],
     // disable paren space errors
     'space-before-function-paren': 0,
+    // allow for space after unary operators
+    'space-unary-ops': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
   }

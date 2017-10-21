@@ -7,13 +7,13 @@
 			<router-view/>
 		</keep-alive>
 		<footer>
-			<p>&copy; 2014 Daniel W. Robert. All Rights Reserved.</p>
+			<p>&copy; 2017 Daniel W. Robert. All Rights Reserved.</p>
 		</footer>
 	</div>
 </template>
 
 <script>
-import Navigation from '@/components/Navigation.vue'
+import Navigation from '@/components/Navigation.vue';
 
 export default {
 	name: 'app',
@@ -24,6 +24,10 @@ export default {
 </script>
 
 <style lang="scss">
+	@import "./assets/stylesheets/_normalize.scss";
+	@import "./assets/stylesheets/_base.scss";
+	@import "./assets/stylesheets/_content.scss";
+
 	footer {
 		// background: transparent image-url("bg_skyline_small.png") center top no-repeat;
 		margin-top: 2.5rem;
