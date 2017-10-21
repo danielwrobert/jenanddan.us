@@ -13,38 +13,24 @@
 /_resources
 error_log
 
-# OS or Editor folders
+# OS and Editor directories and files
 .DS_Store
 ._*
 Thumbs.db
 .cache
 .project
 .settings
-.tmproj
-nbproject
-*.sublime-project
-*.sublime-workspace
-
-# Rubinius
-*.rbc
-
-# Folders to ignore
-.CVS
-intermediate
-publish
 .idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
-# build script local files
-build/buildinfo.properties
-build/config/buildinfo.properties
-
-# Python files
-*.pyc
-
-# Gulp Files
-gulpfile.js
-package.json
+# Project directories and files
 node_modules/
-
-# Database Files
-*.sqlite3
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+test/unit/coverage
