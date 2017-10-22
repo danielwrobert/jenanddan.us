@@ -31,14 +31,22 @@ export default {
 	},
 	methods: {
 		fetchData() {
-			axios.all( [
-				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=26' ),
-				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media/20' ),
-			] )
-			.then( axios.spread( ( gallery, banner ) => {
-				this.gallery = gallery.data;
-				this.banner = banner.data;
-			} ) )
+			// axios.all( [
+			// 	axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=26' ),
+			// 	axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media/20' ),
+			// ] )
+			// .then( axios.spread( ( gallery, banner ) => {
+			// 	this.gallery = gallery.data;
+			// 	this.banner = banner.data;
+			// } ) )
+			// .catch( e => {
+			// 	this.errors.push( e );
+			// } );
+
+			axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=26' )
+			.then( response => {
+				this.gallery = response.data;
+			} )
 			.catch( e => {
 				this.errors.push( e );
 			} );
