@@ -5,7 +5,9 @@
 				<h2>Wedding Details</h2>
 			</div>
 		</div>
-		<div class="content-container" v-if="content" v-html="content.content.rendered"></div>
+		<div class="content-container">
+			<div class="content" v-if="content" v-html="content.content.rendered"></div>
+		</div>
 	</div>
 </template>
 
