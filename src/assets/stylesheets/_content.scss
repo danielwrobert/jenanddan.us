@@ -3,9 +3,21 @@
  */
  .content-container {
      padding: 5.4rem 5%;
+     position: relative;
  }
  .content {
     background-color: #fff;
     margin-bottom: 4rem;
     padding: 3rem 2.5rem;
+ }
+ .content-bottom-divider {
+    border-bottom: 1px solid $blue;
+    border-top: 1px solid $blue;
+    bottom: -1.5rem;
+    display: block;
+    height: 0.4rem;
+    margin: 0 auto;
+    position: relative;
+    opacity: 0.5;
+    width: 12.5rem;
  }

@@ -6,19 +6,23 @@
 			</div>
 		</div>
 		<div class="content-container">
+			<tiny-hearts />
 			<photo-grid />
+			<span class="content-bottom-divider"></span>
         </div>
 	</div>
 </template>
 
 <script>
 import axios from 'axios';
+import TinyHearts from '@/components/TinyHearts';
 import PhotoGrid from '@/components/PhotoGrid';
 
 export default {
 	name: 'gallery',
 	components: {
-		photoGrid: PhotoGrid
+		photoGrid: PhotoGrid,
+		tinyHearts: TinyHearts
 	},
 	data() {
 		return {

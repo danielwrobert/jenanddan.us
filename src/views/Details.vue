@@ -6,16 +6,22 @@
 			</div>
 		</div>
 		<div class="content-container">
+			<tiny-hearts />
 			<div class="content" v-if="content" v-html="content.content.rendered"></div>
+			<span class="content-bottom-divider"></span>
 		</div>
 	</div>
 </template>
 
 <script>
 import axios from 'axios';
+import TinyHearts from '@/components/TinyHearts';
 
 export default {
 	name: 'details',
+	components: {
+		tinyHearts: TinyHearts
+	},
 	data() {
 		return {
 			banner: '',

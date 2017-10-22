@@ -58,6 +58,9 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.photo-grid {
+	margin-bottom: 4rem;
+    padding: 3rem 0;
+}
 </style>
