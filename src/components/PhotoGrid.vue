@@ -43,7 +43,10 @@ export default {
 			// 	this.errors.push( e );
 			// } );
 
-			axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=26' )
+			// TODO: Separated pages into Wedding Photos and Engagement Photos. Now can send an API request
+			// to each (via above approach w/ axios.all/spread) and then set visibility toggle with similar
+			// approach being used in showing photo overlay in Photo component.
+			axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=80' )
 			.then( response => {
 				this.gallery = response.data;
 			} )
