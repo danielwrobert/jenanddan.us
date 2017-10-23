@@ -1,7 +1,6 @@
 <template>
-    <div class="photo-grid">
+    <div class="photo-grid" v-if="0 < gallery[shoot].length">
         <photo
-			v-if="0 < gallery[shoot].length"
 			v-for="item in gallery[shoot]"
 			:key="item.id"
 			:thumbnail="item.media_details.sizes.thumbnail.source_url"
@@ -52,8 +51,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.photo-grid {
-	margin-bottom: 4rem;
-    padding: 3rem 0;
-}
+	.photo-grid {
+		margin-bottom: 4rem;
+		padding: 3rem 0;
+	}
 </style>

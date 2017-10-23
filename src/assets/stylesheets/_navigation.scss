@@ -29,14 +29,16 @@ nav[role="navigation"] {
 
         li {
             margin: 0 4%;
-            padding: 1.5rem 0;
 
             &:last-of-type {
                 background: $peach;
                 border-radius: 5px;
                 cursor: pointer;
 
-                &:hover { background: darken($peach, 5%); }
+                &.router-link-active,
+                &:hover {
+                    background: lighten($blue, 10%);
+                }
 
                 a { color: $blue; }
             }
@@ -50,6 +52,13 @@ nav[role="navigation"] {
                 letter-spacing: 0.1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+            &.router-link-active a {
+                color: #fff;
             }
         }
     }
@@ -72,10 +81,13 @@ nav[role="navigation"] {
                 padding: 0;
         
                 &:last-of-type {
-                    padding: 0.5rem 1.5rem;
                     position: absolute;
                     right: 0.6rem;
                     top: 1rem;
+
+                    a {
+                        padding: 0.5rem 1.5rem;
+                    }
                 }
             }
         }

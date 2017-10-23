@@ -10,7 +10,7 @@
 			<router-link tag="li" to="/details">
 				<a>Wedding Details</a>
 			</router-link>
-			<router-link tag="li" to="/photos/gallery/engagement">
+			<router-link tag="li" to="/photos">
 				<a>Photo Gallery</a>
 			</router-link>
 		</ul>

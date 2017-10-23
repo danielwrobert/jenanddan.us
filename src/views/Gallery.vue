@@ -7,10 +7,12 @@
 		</div>
 		<div class="content-container">
 			<tiny-hearts />
-			<p>
-				<router-link to="/photos/gallery/engagement">Engagement Photos</router-link>
-				<router-link to="/photos/gallery/wedding">Wedding Photos</router-link>
-			</p>
+			<nav class="gallery-nav">
+				<ul>
+					<li><router-link to="/photos/engagement">Engagement Photos</router-link></li>
+					<li><router-link to="/photos/wedding">Wedding Photos</router-link></li>
+				</ul>
+			</nav>
 			<router-view></router-view>
 			<span class="content-bottom-divider"></span>
         </div>
@@ -80,5 +82,36 @@ export default {
     figure.gallery-item {
         margin: 0;
     }
+	.gallery-nav {
+		ul {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			padding: 0;
+			text-align: center;
+		}
+		li {
+			list-style-type: none;
+			margin: 0 0.5rem;
+		}
+		a {
+			background: $blue;
+			border-radius: 5px;
+			color: $peach;
+			display: block;
+			font-family: $header_font;
+			font-size: 1.8rem;
+			letter-spacing: 0.1rem;
+			padding: 0.5rem 1.5rem;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			&.router-link-active,
+			&:hover {
+				background: lighten($blue, 10%);
+				color: #fff;
+			}
+		}
+	}
 </style>
 

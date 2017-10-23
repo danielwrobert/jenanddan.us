@@ -27,17 +27,18 @@ export default new Router( {
 			component: Details,
 		},
 		{
-			path: '/photos/:gallery',
+			path: '/photos',
 			name: 'photos',
 			component: Gallery,
+			redirect: '/photos/engagement',
 			children: [
 				{
-					path: 'engagement',
+					path: '/photos/engagement',
 					component: PhotoGrid,
 					props: { shoot: 'engagement' }
 				},
 				{
-					path: 'wedding',
+					path: '/photos/wedding',
 					component: PhotoGrid,
 					props: { shoot: 'wedding' }
 				},
