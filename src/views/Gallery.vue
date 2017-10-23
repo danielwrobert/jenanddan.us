@@ -7,7 +7,11 @@
 		</div>
 		<div class="content-container">
 			<tiny-hearts />
-			<photo-grid />
+			<p>
+				<router-link to="/photos/gallery/engagement">Engagement Photos</router-link>
+				<router-link to="/photos/gallery/wedding">Wedding Photos</router-link>
+			</p>
+			<router-view></router-view>
 			<span class="content-bottom-divider"></span>
         </div>
 	</div>
@@ -19,7 +23,7 @@ import TinyHearts from '@/components/TinyHearts';
 import PhotoGrid from '@/components/PhotoGrid';
 
 export default {
-	name: 'gallery',
+	name: 'photos',
 	components: {
 		photoGrid: PhotoGrid,
 		tinyHearts: TinyHearts

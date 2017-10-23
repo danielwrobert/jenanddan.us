@@ -79,5 +79,4 @@
         background: rgba(10, 10, 10, 0.96);
     }
 }
-
 </style>

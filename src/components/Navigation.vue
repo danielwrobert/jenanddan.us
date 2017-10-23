@@ -10,7 +10,7 @@
 			<router-link tag="li" to="/details">
 				<a>Wedding Details</a>
 			</router-link>
-			<router-link tag="li" to="/gallery">
+			<router-link tag="li" to="/photos/gallery/engagement">
 				<a>Photo Gallery</a>
 			</router-link>
 		</ul>
@@ -20,17 +20,6 @@
 <script>
 export default {
 	name: 'navigation',
-	// Not really used at the moment:
-	data() {
-		return {
-			links: [
-				{ title: 'Home', slug: '/' },
-				{ title: 'Our Story', slug: '/story' },
-				{ title: 'Wedding Details', slug: '/details' },
-				{ title: 'Photo Gallery', slug: '/gallery' }
-			]
-		}
-	}
 }
 </script>
 

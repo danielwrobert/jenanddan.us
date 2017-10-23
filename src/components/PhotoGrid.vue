@@ -1,7 +1,8 @@
 <template>
     <div class="photo-grid">
         <photo
-			v-for="item in gallery"
+			v-if="0 < gallery[shoot].length"
+			v-for="item in gallery[shoot]"
 			:key="item.id"
 			:thumbnail="item.media_details.sizes.thumbnail.source_url"
 			:full="item.media_details.sizes.full.source_url"
@@ -16,13 +17,16 @@ import Photo from '@/components/Photo.vue';
 
 export default {
 	name: 'photo-grid',
+	props: [ 'shoot' ],
 	components: {
 		photo: Photo
 	},
 	data() {
 		return {
-			banner: '',
-			gallery: [],
+			gallery: {
+				engagement: [],
+				wedding: []
+			},
 			errors: [],
 		}
 	},
@@ -31,25 +35,14 @@ export default {
 	},
 	methods: {
 		fetchData() {
-			// axios.all( [
-			// 	axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=26' ),
-			// 	axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media/20' ),
-			// ] )
-			// .then( axios.spread( ( gallery, banner ) => {
-			// 	this.gallery = gallery.data;
-			// 	this.banner = banner.data;
-			// } ) )
-			// .catch( e => {
-			// 	this.errors.push( e );
-			// } );
-
-			// TODO: Separated pages into Wedding Photos and Engagement Photos. Now can send an API request
-			// to each (via above approach w/ axios.all/spread) and then set visibility toggle with similar
-			// approach being used in showing photo overlay in Photo component.
-			axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=80' )
-			.then( response => {
-				this.gallery = response.data;
-			} )
+			axios.all( [
+				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=82' ),
+				axios.get( 'https://danandjen.mystagingwebsite.com/wp-json/wp/v2/media?per_page=100&parent=80' ),
+			] )
+			.then( axios.spread( ( engagement, wedding ) => {
+				this.gallery.engagement = engagement.data;
+				this.gallery.wedding = wedding.data;
+			} ) )
 			.catch( e => {
 				this.errors.push( e );
 			} );

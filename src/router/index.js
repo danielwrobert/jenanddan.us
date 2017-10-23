@@ -5,6 +5,7 @@ import Home from '@/views/Home';
 import Story from '@/views/Story';
 import Details from '@/views/Details';
 import Gallery from '@/views/Gallery';
+import PhotoGrid from '@/components/PhotoGrid';
 
 Vue.use( Router );
 
@@ -26,9 +27,21 @@ export default new Router( {
 			component: Details,
 		},
 		{
-			path: '/gallery',
-			name: 'gallery',
+			path: '/photos/:gallery',
+			name: 'photos',
 			component: Gallery,
+			children: [
+				{
+					path: 'engagement',
+					component: PhotoGrid,
+					props: { shoot: 'engagement' }
+				},
+				{
+					path: 'wedding',
+					component: PhotoGrid,
+					props: { shoot: 'wedding' }
+				},
+			]
 		},
 	],
 } );
