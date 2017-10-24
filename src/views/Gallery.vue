@@ -76,11 +76,21 @@ export default {
     }
     .photo-grid {
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-gap: 0.5rem;
+        grid-template-columns: repeat(3, 1fr);
+		grid-gap: 0;
+		
+		@include breakpoint(medium) {
+			grid-template-columns: repeat(5, 1fr);
+			grid-gap: 0.2rem;
+		}
+		@include breakpoint(large) {
+			grid-template-columns: repeat(8, 1fr);
+			grid-gap: 0.5rem;
+		}
     }
     figure.gallery-item {
-        margin: 0;
+		margin: 0;
+		text-align: center;
     }
 	.gallery-nav {
 		ul {
