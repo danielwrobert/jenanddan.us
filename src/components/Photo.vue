@@ -59,7 +59,7 @@
     }
 }
 .modal-close {
-    background: none;
+    background: rgba(0,0,0,0.75);
     border: none;
     border-radius: 50px;
     color: #fff;
@@ -69,14 +69,19 @@
     font-size: 1.6rem;
     height: 32px;
     position: fixed;
-    right: 20px;
-    top: 20px;
+    right: 10px;
+    top: 10px;
     user-select: none;
     width: 32px;
     z-index: 2;
 
     &:hover {
         background: rgba(10, 10, 10, 0.96);
+    }
+
+    @include breakpoint(medium) {
+        right: 20px;
+        top: 20px;
     }
 }
 </style>

@@ -60,7 +60,7 @@ export default {
 		color: #fff;
 		display: flex;
 		flex-direction: row;
-		height: calc(100vh - 55px);
+		height: calc(100vh - 193px);
 		justify-content: center;
 
 		.banner-text {
@@ -76,6 +76,10 @@ export default {
 		h2 {
 			font-size: 5rem;
 			text-shadow: 1px 1px 1px rgba(0,0,0,0.7)
+		}
+
+		@include breakpoint(medium) {
+			height: calc(100vh - 55px);
 		}
 	}
 </style>
