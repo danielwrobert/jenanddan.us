@@ -1,0 +1,51 @@
+//== Mixins ==//
+
+// Flexible videos
+@mixin flexible-videos() {
+	height: 0;
+	padding-top: 30px;
+	padding-bottom: 56.25%;
+	position: relative;
+	overflow: hidden;
+
+	iframe {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0; left: 0;
+	}
+}
+
+
+// Clearfix
+@mixin clearfix() {
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
+
+
+// Media query breakpoints
+@mixin breakpoint($point) {
+    @if $point == large {
+        // Minimum width of 960/16 pixels = 60em.
+        @media (min-width: 60em) { @content; }
+    }
+    @else if $point == medium-large {
+        // Minimum width of 850/16 pixels = 53.125em.
+        @media (min-width: 53.125em) { @content; }
+    }
+    @else if $point == medium {
+        // Minimum width of 760/16 pixels = 47.5em.
+        @media (min-width: 47.5em) { @content; }
+    }
+    @else if $point == small {
+        // Minimum width of 600/16 pixels = 37.5em.
+        @media (min-width: 37.5em)  { @content; }
+    }
+    @else {
+        @media (min-width: $point) { @content; }
+    }
+}

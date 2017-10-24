@@ -1,0 +1,521 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Main Project Styles
+   ========================================================================== */
+
+/*
+ *  Global Elements
+ **/
+html {
+    font-size: 62.5%; /* Sets up the Base 10 stuff for rem font sizing */
+}
+
+body {
+    @include rem-calc(font-size, 1.6);
+    background: #f6f6f6;
+    color: $grey;
+}
+
+img {
+    max-width: 100%;
+    border: $border;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    margin: 0;
+    font-family: $header_font;
+    line-height: 1;
+}
+
+
+/*
+ *  Header Section
+ **/
+    header {
+        @include rem-calc(height, 55);
+        background: $grey image-url("lovers_field.jpg") center top no-repeat;
+        background-size: auto 37.5em;
+        color: #FFF;
+
+        h1, h2 {
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+        }
+
+    h1 {
+        @include rem-calc(margin, 3.2, 0);
+        @include rem-calc(font-size, 4);
+    }
+
+    .main_header {
+        @include rem-calc(padding, 3.5, 2.5);
+        @include rem-calc(margin, 0, 0, 2.5);
+        @include inline-block();
+        background: rgba(117,134,156,0.7);
+        // background: $blue;
+        border-radius: 225px;
+    }
+
+    .logo {
+        @include rem-calc(font-size, 9.5);
+        // @include rem-calc(letter-spacing, 1);
+        margin: 0;
+        color: #fff;
+        // color: $peach;
+        font-family: $script_font;
+        font-weight: normal;
+        text-align: center;
+
+        span {
+            @include rem-calc(font-size, 6.5);
+            @include rem-calc(padding, 0, 1.5, 0, 0.5);
+        }
+    }
+    .subtitle {
+        @include rem-calc(font-size, 2.2);
+        margin: 0;
+        display: block;
+        color: #fff;
+        font-family: sans-serif;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    .content {
+        @include rem-calc(padding, 9, 0, 0);
+        height: 100%;
+        color: #fff;
+        text-align: center;
+    }
+
+  // Minimum width of 625/16 pixels = 39.0625em.
+    @include breakpoint(39.0625em) {
+        h1 { @include rem-calc(font-size, 5); }
+
+        .main_header {
+            @include rem-calc(margin-bottom, 3.5);
+        }
+    }
+    @include breakpoint(medium-large) {
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
+
+
+/*
+ *  Content Section
+ **/
+.content_block {
+    padding: 54px 5%;
+    color: #000;
+}
+
+.content {
+    // @include rem-calc(padding, 2, 0);
+    @include rem-calc(max-width, 102.4);
+    width: 92%;
+    margin: auto;
+
+    @include breakpoint(1080px) {
+        width: 100%;
+    }
+
+    h2 {
+        @include rem-calc(font-size, 5);
+        margin: 0;
+    }
+
+    h3 {
+        @include rem-calc(margin, 0, 0, 0.5);
+        @include rem-calc(font-size, 2.5);
+        color: $blue;
+    }
+
+    h4 {
+        @include rem-calc(margin, 1.5, 0, 0.5);
+        @include rem-calc(font-size, 2);
+      }
+
+    p { margin-top: 0; color: $grey; }
+
+    ul {
+        @include rem-calc(padding, 0, 0, 0, 1);
+        margin-top: 0;
+    list-style-type: none;
+        // padding: 0;
+
+    #info & {
+      padding: 0;
+
+      &:first-of-type {
+        @include rem-calc(margin-bottom, 2.5);
+      }
+    }
+
+        li {
+      color: $grey;
+
+      &.price_group {
+        @include rem-calc(margin-left, -1);
+        color: $blue;
+        font-weight: bold;
+      }
+
+    }
+    }
+
+    a {
+        color: $grey;
+
+        &:hover { color: lighten($grey, 10%); }
+    }
+}
+
+.map {
+  //height: 0;
+  //padding-bottom: 56.25%; // 16:9
+  //position: relative;
+
+    iframe {
+        @include rem-calc(height, 25);
+        border: $border;
+        width: 100%;
+    //height: 100%;
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+
+       @include breakpoint(small) {
+           @include rem-calc(height, 30);
+       }
+    }
+
+    #location & {
+        @include rem-calc(margin-bottom, 1.5);
+    }
+
+    #info & {
+        @include rem-calc(margin-bottom, 1.6);
+
+        @include breakpoint(medium) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.section_breaker {
+  @include rem-calc(width, 12.5);
+  @include rem-calc(height, 0.4);
+  @include rem-calc(bottom, -1.5);
+  margin: 0 auto;
+  position: relative;
+  border-top: 1px solid $blue;
+  border-bottom: 1px solid $blue;
+  opacity: 0.5;
+}
+
+.em_text {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.center_align {
+  text-align: center;
+}
+
+.footnote {
+  @include rem-calc(font-size, 1.2);
+  font-style: italic;
+}
+
+.image_block {
+    @include rem-calc(height, 50);
+    background: transparent image-url("lovers_stare.jpg") center top no-repeat;
+    background-size: auto 37.5em;
+    color: #FFF;
+
+    h2 {
+        padding: 0 2%;
+        @include rem-calc(padding-top, 20);
+        @include rem-calc(font-size, 6);
+        margin: 0;
+        color: #FFF;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+        @include breakpoint(small) {
+            @include rem-calc(font-size, 8);
+        }
+        @include breakpoint(medium) {
+        @include rem-calc(font-size, 10);
+        }
+    }
+
+    &.banner_two {
+        background-image: image-url("lovers_location.jpg");
+    }
+    &.banner_three {
+        background-image: image-url("lovers_walk.jpg");
+    }
+    &.banner_four {
+        background-image: image-url("lovers_hands.jpg");
+    }
+    &.banner_five {
+        background-image: image-url("lovers_nose.jpg");
+    }
+
+  @include breakpoint(medium-large) {
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+.tiny_hearts {
+  @include rem-calc(top, -2);
+  position: relative;
+  text-align: center;
+  opacity: 0.7;
+
+  img {
+    border: none;
+  }
+}
+
+.flexible_video_wrap {
+  @include flexible-videos();
+}
+
+.thankyou {
+  @include rem-calc(padding, 2.5, 0);
+  text-align: center;
+}
+
+
+/*
+ *  Our Story
+ **/
+#our_story {
+    img {
+        @include rem-calc(margin-bottom, 2);
+
+    &[alt="Dan Robert"] {
+      @include rem-calc(margin-top, 2);
+
+      @include breakpoint(medium) {
+        @include rem-calc(margin-top, 0);
+      }
+    }
+    }
+
+    .content:first-of-type .column:last-of-type {
+        @include breakpoint(medium) {
+            @include rem-calc(padding-top, 3);
+        }
+    }
+
+  .column2 .column:first-of-type h3:first-of-type {
+    @include rem-calc(margin-bottom, 1);
+  }
+}
+.welcome {
+  @include rem-calc(margin-bottom, 4);
+  @include rem-calc(padding, 3, 2.5);
+  background-color: #fff;
+  border-radius: 5px;
+  //box-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+
+  p { margin: 0; }
+}
+
+
+/*
+ *  Registry
+ **/
+#registry {
+  img {
+    border: none;
+  }
+  .brand_logo {
+    @include rem-calc(margin-bottom, 5);
+    text-align: center;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    img {
+      -webkit-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      opacity: 0.6;
+
+      &:hover {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+    }
+  }
+  @include breakpoint(medium) {
+    .brand_logo {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+/*
+ *  Photos
+ **/
+#photos {
+  .content {
+    @include rem-calc(padding, 1.5, 0);
+  }
+}
+
+
+/*
+ *  RSVP
+ **/
+#rsvp {
+  @extend #photos;
+
+  label {
+    display: block;
+
+    &.checklist {
+      @include rem-calc(padding-left, 1);
+    }
+  }
+
+  .sub_label { @include rem-calc(padding-left, 1.5); }
+
+  input {
+    @include rem-calc(padding, 1.2);
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+
+    &[type="submit"] {
+      @include rem-calc(padding, 1.2, 1.5);
+      width: auto;
+      background-color: $blue;
+      color: $peach;
+      text-transform: uppercase;
+    }
+    &[type="radio"] {
+      @include rem-calc(margin, 0, 0, 1.5, 0.5);
+      width: auto;
+    }
+  }
+
+  button {
+    &[type="submit"] {
+      @extend input[type="submit"];
+      border: none;
+      border-radius: 5px;
+    }
+  }
+
+  textarea {
+    @extend input;
+    resize: none;
+  }
+
+  .content {
+    @include breakpoint(medium) {
+      width: 75%;
+    }
+    @include breakpoint(large) {
+      width: 50%;
+    }
+  }
+
+  .error { color: #9d1300; }
+  .event_ended { text-align: center; }
+}
+
+
+/*
+ *  Footer Section
+ **/
+footer {
+    @include rem-calc(margin-top, 2.5);
+    @include rem-calc(padding-top, 4.5);
+    background: transparent image-url("bg_skyline_small.png") center top no-repeat;
+    text-align: center;
+
+    @include breakpoint(small) {
+        @include rem-calc(padding-top, 9.5);
+        background-image: image-url("bg_skyline.png");
+    }
+
+    p {
+        @include rem-calc(padding, 1.5, 0);
+    @include rem-calc(font-size, 1.2);
+        margin: 0;
+        background: $blue;
+        color: $peach;
+        // background: shade($blue_light, 5%);
+        // background: tint($purple, 10%);
+    }
+}
