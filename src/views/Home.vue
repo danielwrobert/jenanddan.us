@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<div class="banner" v-if="banner" :style="{ 'background-image': 'url(' + banner.guid.rendered + ')' }">
+		<div class="banner" v-if="banner.guid" :style="{ 'background-image': 'url(' + banner.guid.rendered + ')' }">
 			<div class="banner-text">
 				<h1>Dan & Jen</h1>
 				<h2>11.04.2013</h2>
@@ -8,7 +8,7 @@
 		</div>
 		<div class="content-container">
 			<tiny-hearts />
-			<div class="content" v-if="content" v-html="content.content.rendered"></div>
+			<div class="content" v-if="content.content" v-html="content.content.rendered"></div>
 			<span class="content-bottom-divider"></span>
 		</div>
 	</div>
@@ -25,8 +25,8 @@ export default {
 	},
 	data() {
 		return {
-			banner: '',
-			content: [],
+			banner: {},
+			content: {},
 			errors: []
 		}
 	},

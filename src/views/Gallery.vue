@@ -1,6 +1,6 @@
 <template>
 	<div class="photos">
-		<div class="banner" v-if="banner" :style="{ 'background-image': 'url(' + banner.guid.rendered + ')' }">
+		<div class="banner" v-if="banner.guid" :style="{ 'background-image': 'url(' + banner.guid.rendered + ')' }">
 			<div class="banner-text">
 				<h2>Photos</h2>
 			</div>
@@ -32,7 +32,7 @@ export default {
 	},
 	data() {
 		return {
-			banner: '',
+			banner: {},
 			errors: [],
 		}
 	},
